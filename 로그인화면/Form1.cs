@@ -118,5 +118,10 @@ namespace 로그인화면
 
             MessageBox.Show(Stu_cat + Stu_major + Stu_name);
         }
+
+        private void txtPW_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
