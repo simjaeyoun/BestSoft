@@ -33,6 +33,7 @@
             this.txtPW = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtID
@@ -81,11 +82,21 @@
             this.label2.Text = "PW";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(135, 284);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(250, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "비밀번호 오류 5회 이상 로그인 제한";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 449);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPW);
@@ -107,6 +118,7 @@
         private System.Windows.Forms.TextBox txtPW;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
