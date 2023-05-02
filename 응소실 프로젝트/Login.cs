@@ -16,7 +16,7 @@ using SeleniumExtras.WaitHelpers;
 
 namespace 로그인화면
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         ChromeOptions options;
         string loginUrl;
@@ -27,7 +27,7 @@ namespace 로그인화면
         string Stu_num;
         string Stu_name;
         string Stu_state;
-        public Form1()
+        public Login()
         {
             InitializeComponent();
             options = new ChromeOptions();
@@ -117,6 +117,11 @@ namespace 로그인화면
             }
 
             MessageBox.Show(Stu_cat + Stu_major + Stu_name);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
