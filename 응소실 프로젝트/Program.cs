@@ -16,9 +16,15 @@ namespace 로그인화면
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-            In_Game Lobby = new In_Game(); 
-            Application.Run(Lobby); // Login 폼 실행 후 Lobby 폼 실행
+
+            Login login = new Login();
+            Application.Run(login);
+
+            In_Game Lobby = new In_Game();
+            if (login.Login_Result)
+            {
+                Application.Run(Lobby); // Login 폼 실행 후 Lobby 폼 실행
+            }
         }
     }
 }

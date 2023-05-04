@@ -13,30 +13,37 @@ namespace 로그인화면
 {
     public partial class In_Game : Form
     {
-        public enum Direction
+        public enum Direction // 방향 열거
         {
             Up,
             Down,
             Left,
-            Right
+            Right,
+            Up_Walk,
+            Down_Walk,
+            Left_Walk,
+            Right_Walk
+        }
+        public enum ch_Color // 캐릭터 Color 열거
+        {
+            Black,
+            Orange,
+            Green
         }
 
         private Direction direction; // 방향
-        private int MoveStep = 3; // 스피드
+        private int MoveStep = 7; // 스피드
         private int x, y;
-        private Image upImage;
-        private Image downImage;
-        private Image leftImage;
-        private Image rightImage;
-        private bool Go_Up = true, Go_Down = true, Go_Left = true, Go_Right = true, isMove = false;
-        public int clr = 1; // black=1, orange=2, green=3
+        private bool Go_Up = true, Go_Down = true, Go_Left = true, Go_Right = true;
+        public ch_Color clr; 
+        private Image[,] images = new Image[3,8]; // images[clr][direction] -> Player의 [색깔][방향] 이미지 2차원 배열
 
         public In_Game()
         {
             InitializeComponent();
-            color();
+            color();      // Color 선택 폼 불러오기
             LoadImages(); // image file 불러오기
-            player.Image = downImage;
+            player.Image = images[(int)clr,(int)Direction.Down];
             x = player.Location.X;
             y = player.Location.Y;
         }
@@ -52,45 +59,37 @@ namespace 로그인화면
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) // Player 움직임 애니메이션 구현 
         {
-            if (isMove)
-            {
-                player.Image = Properties.Resources.a_Player_Right_3;
-            }
         }
 
-        private void In_Game_KeyUp(object sender, KeyEventArgs e) // 그냥 서있는 이미지
+        private void In_Game_KeyUp(object sender, KeyEventArgs e) // 키를 땠을 때 (그냥 서있는 이미지)
         {
-            isMove = false;
             try
             {
-                if (direction == Direction.Up)
-                    player.Image = upImage;
-                if (direction == Direction.Down)
-                    player.Image = downImage;
-                if (direction == Direction.Left)
-                    player.Image = leftImage;
-                if (direction == Direction.Right)
-                    player.Image = rightImage;
+                player.Image = images[(int)clr, (int)direction];
             }
-            catch (Exception q) // File이 경로에 없을 때
+            catch (Exception q) 
             {
                 MessageBox.Show("error" + q.Message);
             }
 
         }
 
-        private void LoadImages()
+        private void LoadImages() // 기본 이미지 불러오기
         {
-            if (clr == 1) //black
+            if (clr == ch_Color.Black) //black
             {
                 try
                 {
-                    upImage = Properties.Resources.a_Player_Up;
-                    downImage = Properties.Resources.a_Player_Down;
-                    leftImage = Properties.Resources.a_Player_Left;
-                    rightImage = Properties.Resources.a_Player_Right;
+                    images[(int)clr,(int)Direction.Up] = Properties.Resources.a_Player_Up;
+                    images[(int)clr, (int)Direction.Down] = Properties.Resources.a_Player_Down;
+                    images[(int)clr, (int)Direction.Left] = Properties.Resources.a_Player_Left;
+                    images[(int)clr, (int)Direction.Right] = Properties.Resources.a_Player_Right;
+                    images[(int)clr, (int)Direction.Up_Walk] = Properties.Resources.a_Player_Up_Walk1;
+                    images[(int)clr, (int)Direction.Down_Walk] = Properties.Resources.a_Player_Down_Walk1;
+                    images[(int)clr, (int)Direction.Left_Walk] = Properties.Resources.a_Player_Left_Walk1;
+                    images[(int)clr, (int)Direction.Right_Walk] = Properties.Resources.a_Player_Right_Walk1;
 
                 }
                 catch (Exception e)
@@ -98,14 +97,38 @@ namespace 로그인화면
                     MessageBox.Show("error" + e.Message);
                 }
             }
-            if (clr == 2) // orange
+            if (clr == ch_Color.Orange) // orange
             {
                 try
                 {
-                    upImage = Properties.Resources.Orange_Player_Up;
-                    downImage = Properties.Resources.Orange_Player_Down;
-                    leftImage = Properties.Resources.Orange_Player_Left;
-                    rightImage = Properties.Resources.Orange_Player_Right;
+                    images[(int)clr, (int)Direction.Up] = Properties.Resources.a_Player_Up;
+                    images[(int)clr, (int)Direction.Down] = Properties.Resources.a_Player_Down;
+                    images[(int)clr, (int)Direction.Left] = Properties.Resources.a_Player_Left;
+                    images[(int)clr, (int)Direction.Right] = Properties.Resources.a_Player_Right;
+                    images[(int)clr, (int)Direction.Up_Walk] = Properties.Resources.a_Player_Up_Walk1;
+                    images[(int)clr, (int)Direction.Down_Walk] = Properties.Resources.a_Player_Down_Walk1;
+                    images[(int)clr, (int)Direction.Left_Walk] = Properties.Resources.a_Player_Left_Walk1;
+                    images[(int)clr, (int)Direction.Right_Walk] = Properties.Resources.a_Player_Right_Walk1;
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("error" + e.Message);
+                }
+
+            }
+            if (clr == ch_Color.Green) // green
+            {
+                try
+                {
+                    images[(int)clr, (int)Direction.Up] = Properties.Resources.a_Player_Up;
+                    images[(int)clr, (int)Direction.Down] = Properties.Resources.a_Player_Down;
+                    images[(int)clr, (int)Direction.Left] = Properties.Resources.a_Player_Left;
+                    images[(int)clr, (int)Direction.Right] = Properties.Resources.a_Player_Right;
+                    images[(int)clr, (int)Direction.Up_Walk] = Properties.Resources.a_Player_Up_Walk1;
+                    images[(int)clr, (int)Direction.Down_Walk] = Properties.Resources.a_Player_Down_Walk1;
+                    images[(int)clr, (int)Direction.Left_Walk] = Properties.Resources.a_Player_Left_Walk1;
+                    images[(int)clr, (int)Direction.Right_Walk] = Properties.Resources.a_Player_Right_Walk1;
 
                 }
                 catch (Exception e)
@@ -116,21 +139,14 @@ namespace 로그인화면
             }
         }
 
-        public void SetDirection(Direction newDirection) // Key 입력시 방향 설정 & Player Image 변경 (움직이는 이미지) 
+        public void SetDirection(Direction newDirection) // Key 입력 시 방향 설정 & Player Image 변경 (움직이는 이미지) 
         {
             direction = newDirection;
             try
             {
-                if (newDirection == Direction.Up)
-                    player.Image = Properties.Resources.a_Player_Up_2;
-                if (newDirection == Direction.Down)
-                    player.Image = Properties.Resources.a_Player_Down_2;
-                if (newDirection == Direction.Left)
-                    player.Image = Properties.Resources.a_Player_Left_2;
-                if (newDirection == Direction.Right)
-                    player.Image = Properties.Resources.a_Player_Right_2;
+                    player.Image = images[(int)clr, (int)direction + 4];
             }
-            catch (Exception e) // File이 경로에 없을 때
+            catch (Exception e)
             {
                 MessageBox.Show("error" + e.Message);
             }
@@ -138,7 +154,6 @@ namespace 로그인화면
 
         private void In_Game_KeyDown(object sender, KeyEventArgs e)
         {
-            isMove = true;
             switch (e.KeyCode)
             {
                 case Keys.Up:
@@ -161,9 +176,9 @@ namespace 로그인화면
             player.Location = new Point(x, y);
             Collision_Detection(e);
         }
-        private void Collision_Detection(KeyEventArgs e)
+        private void Collision_Detection(KeyEventArgs e) // 충돌검사 ( Bag Obstacle은 그냥 통과하는 버그있음 고쳐야함 -상윤)
         {
-            foreach (Control control in this.Controls) // obstacle 만났을 때
+            foreach (Control control in this.Controls) 
             {
                 if (control is PictureBox && (string)control.Tag == "obstacle")
                 {
@@ -182,6 +197,14 @@ namespace 로그인화면
 
                         else if (direction == Direction.Right)
                             Go_Right = false;
+
+                        if(e.KeyCode == Keys.Space) //Space 입력 시
+                        {
+                            MessageBox.Show("Space");
+                            // Space 입력 이벤트 구현 (start)
+
+                            // Space 입력 이벤트 구현 (end) 
+                        }
                     }
                     else
                     {
@@ -189,16 +212,10 @@ namespace 로그인화면
                         Go_Down = true;
                         Go_Left = true;
                         Go_Right = true;
-                        control.BackColor = Color.Black;
+                        control.BackColor = Color.Transparent;
                     }
-
                 }
             }
-
-
-
         }
-
-
     }
 }

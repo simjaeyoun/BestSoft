@@ -73,9 +73,9 @@ namespace 로그인화면.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap a_Player_Down_2 {
+        internal static System.Drawing.Bitmap a_Player_Down_Walk1 {
             get {
-                object obj = ResourceManager.GetObject("a_Player_Down_2", resourceCulture);
+                object obj = ResourceManager.GetObject("a_Player_Down_Walk1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace 로그인화면.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap a_Player_Down_3 {
+        internal static System.Drawing.Bitmap a_Player_Down_Walk2 {
             get {
-                object obj = ResourceManager.GetObject("a_Player_Down_3", resourceCulture);
+                object obj = ResourceManager.GetObject("a_Player_Down_Walk2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace 로그인화면.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap a_Player_Left_2 {
+        internal static System.Drawing.Bitmap a_Player_Left_Walk1 {
             get {
-                object obj = ResourceManager.GetObject("a_Player_Left_2", resourceCulture);
+                object obj = ResourceManager.GetObject("a_Player_Left_Walk1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace 로그인화면.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap a_Player_Left_3 {
+        internal static System.Drawing.Bitmap a_Player_Left_Walk2 {
             get {
-                object obj = ResourceManager.GetObject("a_Player_Left_3", resourceCulture);
+                object obj = ResourceManager.GetObject("a_Player_Left_Walk2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace 로그인화면.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap a_Player_Right_2 {
+        internal static System.Drawing.Bitmap a_Player_Right_Walk1 {
             get {
-                object obj = ResourceManager.GetObject("a_Player_Right_2", resourceCulture);
+                object obj = ResourceManager.GetObject("a_Player_Right_Walk1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace 로그인화면.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap a_Player_Right_3 {
+        internal static System.Drawing.Bitmap a_Player_Right_Walk2 {
             get {
-                object obj = ResourceManager.GetObject("a_Player_Right_3", resourceCulture);
+                object obj = ResourceManager.GetObject("a_Player_Right_Walk2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace 로그인화면.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap a_Player_Up_2 {
+        internal static System.Drawing.Bitmap a_Player_Up_Walk1 {
             get {
-                object obj = ResourceManager.GetObject("a_Player_Up_2", resourceCulture);
+                object obj = ResourceManager.GetObject("a_Player_Up_Walk1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace 로그인화면.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap a_Player_Up_3 {
+        internal static System.Drawing.Bitmap a_Player_Up_Walk2 {
             get {
-                object obj = ResourceManager.GetObject("a_Player_Up_3", resourceCulture);
+                object obj = ResourceManager.GetObject("a_Player_Up_Walk2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,96 +206,6 @@ namespace 로그인화면.Properties {
         internal static System.Drawing.Bitmap Obstacle2 {
             get {
                 object obj = ResourceManager.GetObject("Obstacle2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap Orange_Player_Down {
-            get {
-                object obj = ResourceManager.GetObject("Orange_Player_Down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap Orange_Player_Left {
-            get {
-                object obj = ResourceManager.GetObject("Orange_Player_Left", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap Orange_Player_Right {
-            get {
-                object obj = ResourceManager.GetObject("Orange_Player_Right", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap Orange_Player_Up {
-            get {
-                object obj = ResourceManager.GetObject("Orange_Player_Up", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap Player_Down {
-            get {
-                object obj = ResourceManager.GetObject("Player_Down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap Player_Going_Right {
-            get {
-                object obj = ResourceManager.GetObject("Player_Going_Right", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap Player_Left {
-            get {
-                object obj = ResourceManager.GetObject("Player_Left", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap Player_Right {
-            get {
-                object obj = ResourceManager.GetObject("Player_Right", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap Player_Up {
-            get {
-                object obj = ResourceManager.GetObject("Player_Up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
