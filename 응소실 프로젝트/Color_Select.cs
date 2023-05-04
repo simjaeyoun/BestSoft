@@ -21,14 +21,21 @@ namespace 로그인화면
         {
             this.DialogResult = DialogResult.OK;
             In_Game main = (In_Game)Owner;
-            main.clr = 1;
+            main.clr = In_Game.ch_Color.Black;
         }
 
         private void button2_Click_1(object sender, EventArgs e) // Orange btn 클릭
         {
             this.DialogResult = DialogResult.OK;
             In_Game main = (In_Game)Owner;
-            main.clr = 2;
+            main.clr = In_Game.ch_Color.Black;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            In_Game main = (In_Game)Owner;
+            main.clr = In_Game.ch_Color.Black;
         }
     }
 }

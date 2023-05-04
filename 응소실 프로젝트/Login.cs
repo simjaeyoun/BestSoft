@@ -18,6 +18,8 @@ namespace 로그인화면
 {
     public partial class Login : Form
     {
+        public bool Login_Result; // Login 결과 변수
+        
         ChromeOptions options;
         string loginUrl;
         ChromeDriver driver;
@@ -54,6 +56,7 @@ namespace 로그인화면
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+                Login_Result = true; // Login 버튼 클릭시 변수 기본값 true
 
                 driver.FindElement(By.Id("loginId")).SendKeys(txtID.Text);
                 driver.FindElement(By.Id("loginPwd")).SendKeys(txtPW.Text);
@@ -100,6 +103,8 @@ namespace 로그인화면
                 catch
                 {
                 //Login falut
+                    Login_Result = false; // Login 실패 했을 때 False 설정
+                    
                     var pwfalut = driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[1]"));
                     string LoginFalut = pwfalut.Text;
                 
@@ -120,16 +125,27 @@ namespace 로그인화면
                     //clear the input
                     driver.FindElement(By.Id("loginId")).Clear();
                     driver.FindElement(By.Id("loginPwd")).Clear();
+                }
+            
+            
+
+            if (Login_Result) // Login 결과 변수 true일 때 정보 출력 후 Login Form Close
+            {
+                MessageBox.Show(Stu_cat + Stu_major + Stu_name);
+                this.Close();
             }
 
-            MessageBox.Show(Stu_cat + Stu_major + Stu_name);
-
-            this.Close();
+        }
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }

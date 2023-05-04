@@ -121,37 +121,37 @@
   <data name="a_Player_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_Player_Down_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="a_Player_Down_Walk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Down_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_Player_Down_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="a_Player_Down_Walk2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Down_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_Player_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_Player_Left_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="a_Player_Left_Walk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Left_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_Player_Left_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="a_Player_Left_Walk2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Left_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_Player_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_Player_Right_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="a_Player_Right_Walk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Right_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_Player_Right_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="a_Player_Right_Walk2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Right_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_Player_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_Player_Up_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="a_Player_Up_Walk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Up_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_Player_Up_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="a_Player_Up_Walk2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_Player_Up_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -162,32 +162,5 @@
   </data>
   <data name="Obstacle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obstacle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Orange_Player_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Orange_Player_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Orange_Player_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Orange_Player_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Orange_Player_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Orange_Player_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Orange_Player_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Orange_Player_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_Going_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player_Going_Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
