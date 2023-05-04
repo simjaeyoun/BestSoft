@@ -27,6 +27,7 @@ namespace 로그인화면
         string Stu_num;
         string Stu_name;
         string Stu_state;
+
         public Login()
         {
             InitializeComponent();
@@ -34,10 +35,16 @@ namespace 로그인화면
             options.AddArgument("window-size=1920x1080");
             options.AddArgument("headless");
             loginUrl = "https://klas.kw.ac.kr/usr/cmn/login/LoginForm.do?redirectUrl=/std/cmn/frame/Frame.do";
-            
-            driver = new ChromeDriver(options);
-            //driver = new ChromeDriver();
-            driver.Navigate().GoToUrl(loginUrl);
+
+            try
+            {
+                //driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
+                driver.Navigate().GoToUrl(loginUrl);
+            }catch (Exception e)
+            {
+                MessageBox.Show("error"+e);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -89,14 +96,13 @@ namespace 로그인화면
                     Stu_name = studentName.Text;
                     Stu_num = studentNum.Text;
                     Stu_state = studentState.Text;
-
                 }
                 catch
                 {
-                    //Login falut
+                //Login falut
                     var pwfalut = driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[1]"));
                     string LoginFalut = pwfalut.Text;
-                    
+                
                     // to find a number of login falut
                     Match match = Regex.Match(LoginFalut, @"\d+");
 
@@ -117,6 +123,8 @@ namespace 로그인화면
             }
 
             MessageBox.Show(Stu_cat + Stu_major + Stu_name);
+
+            this.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
