@@ -180,7 +180,7 @@ namespace 로그인화면
         {
             foreach (Control control in this.Controls) 
             {
-                if (control is PictureBox && (string)control.Tag == "obstacle")
+                if (control is PictureBox && ((string)control.Tag == "obstacle" || (string)control.Tag == "start"))
                 {
                     if (player.Bounds.IntersectsWith(control.Bounds))
                     {
@@ -200,7 +200,14 @@ namespace 로그인화면
 
                         if(e.KeyCode == Keys.Space) //Space 입력 시
                         {
-                            MessageBox.Show("Space");
+                            if ((string)control.Tag == "start")
+                            {
+                                First f = new First();
+                                f.Show();
+                                this.Hide();
+                            }
+                            else
+                                MessageBox.Show("Space");
                             // Space 입력 이벤트 구현 (start)
 
                             // Space 입력 이벤트 구현 (end) 
