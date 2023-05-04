@@ -1,0 +1,12 @@
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\bin\Debug\ClientChat.exe.config
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\bin\Debug\ClientChat.exe
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\bin\Debug\ClientChat.pdb
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\obj\Debug\ClientChat.csproj.AssemblyReference.cache
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\obj\Debug\ClientChat.csproj.SuggestedBindingRedirects.cache
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\obj\Debug\ClientChat.Form1.resources
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\obj\Debug\ClientChat.Properties.Resources.resources
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\obj\Debug\ClientChat.csproj.GenerateResource.cache
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\obj\Debug\ClientChat.csproj.CoreCompileInputs.cache
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\obj\Debug\ClientChat.exe
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\obj\Debug\ClientChat.pdb
+C:\Users\KDH\Desktop\3-1\c#\Project\ClientChat\bin\Debug\bubble.png
