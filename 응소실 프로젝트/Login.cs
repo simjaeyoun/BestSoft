@@ -24,11 +24,7 @@ namespace 로그인화면
         string loginUrl;
         ChromeDriver driver;
 
-        string Stu_cat;
-        string Stu_major;
-        string Stu_num;
-        string Stu_name;
-        string Stu_state;
+        Student student = new Student();
 
         public Login()
         {
@@ -94,11 +90,13 @@ namespace 로그인화면
                     var studentName = driver.FindElement(By.XPath("/html/body/main/div/div/div/div[2]/div/table[1]/tbody/tr/td[4]"));
                     var studentState = driver.FindElement(By.XPath("/html/body/main/div/div/div/div[2]/div/table[1]/tbody/tr/td[5]"));
 
-                    Stu_cat = category.Text;
+
+                    student.Info = new String[]{ category.Text, major.Text,studentNum.Text, studentName.Text, studentState.Text };
+                    /* student.Stu_cat = category.Text;
                     Stu_major = major.Text;
                     Stu_name = studentName.Text;
                     Stu_num = studentNum.Text;
-                    Stu_state = studentState.Text;
+                    Stu_state = studentState.Text;*/
                 }
                 catch
                 {
@@ -131,7 +129,7 @@ namespace 로그인화면
 
             if (Login_Result) // Login 결과 변수 true일 때 정보 출력 후 Login Form Close
             {
-                MessageBox.Show(Stu_cat + Stu_major + Stu_name);
+                MessageBox.Show(student.Info[3]);
                 this.Close();
             }
 
