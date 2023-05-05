@@ -34,6 +34,7 @@ C:\Users\ksksy\Desktop\응소실\git_res_2\BestSoft\응소실 프로젝트\obj\D
 C:\Users\ksksy\Desktop\응소실\git_res_2\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.pdb
 C:\Users\ksksy\Desktop\응소실\git_res_2\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.Select_Color.resources
 C:\Users\ksksy\Desktop\응소실\git_res_2\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.In_Game.resources
+<<<<<<< Updated upstream
 C:\Users\82103\Desktop\방탈출\응소실 프로젝트\bin\Debug\selenium-manager\linux\selenium-manager
 C:\Users\82103\Desktop\방탈출\응소실 프로젝트\bin\Debug\selenium-manager\macos\selenium-manager
 C:\Users\82103\Desktop\방탈출\응소실 프로젝트\bin\Debug\selenium-manager\windows\selenium-manager.exe
@@ -63,3 +64,7 @@ C:\Users\82103\Desktop\방탈출\응소실 프로젝트\obj\Debug\로그인화�
 C:\Users\82103\Desktop\방탈출\응소실 프로젝트\obj\Debug\로그인화면.Second.resources
 C:\Users\82103\Desktop\방탈출\응소실 프로젝트\obj\Debug\로그인화면.Final.resources
 C:\Users\82103\Desktop\방탈출\응소실 프로젝트\obj\Debug\로그인화면.Second_passwd.resources
+=======
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.Select_Color.resources
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.In_Game.resources
+>>>>>>> Stashed changes
