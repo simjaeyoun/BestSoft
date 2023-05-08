@@ -113,6 +113,7 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.helicopter);
+            this.DoubleBuffered = true;
             this.Name = "Final";
             this.Tag = "obstacle";
             this.Text = "Second";
