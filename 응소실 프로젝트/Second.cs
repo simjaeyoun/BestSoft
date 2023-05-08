@@ -74,7 +74,13 @@ namespace 로그인화면
                         x += MoveStep; SetDirection(Direction.Right);
                     break;
             }
-            player.Location = new Point(x, y);
+            if (x >= 0 && x + player.Width <= ClientSize.Width && // form 화면을 벗어나지 않게 함
+                y >= 0 && y + player.Height <= ClientSize.Height)
+            {
+                player.Left = x;
+                player.Top = y;
+            }
+            //player.Location = new Point(x, y);
             Check_Question(e);
         }
 

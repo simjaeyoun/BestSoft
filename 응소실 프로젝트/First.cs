@@ -75,7 +75,13 @@ namespace 로그인화면
                      
                     break;
             }
-            player.Location = new Point(x, y);
+            if (x >= 0 && x + player.Width <= ClientSize.Width && // form 화면을 벗어나지 않게 함
+                y >= 0 && y + player.Height <= ClientSize.Height)
+            {
+                player.Left = x;
+                player.Top = y;
+            }
+            //player.Location = new Point(x, y);
             Check_Question(e);
         }
 
@@ -99,7 +105,7 @@ namespace 로그인화면
 
                         if (e.KeyCode == Keys.Space)
                         {
-                            if ((string)control.Name == "door")
+                            if ((string)control.Name == "doorQ")
                             {
                                 First_passwd Fp = new First_passwd();
                                 Fp.ShowDialog();
@@ -114,7 +120,7 @@ namespace 로그인화면
                                 board_pw bp = new board_pw();
                                 bp.ShowDialog();
                             }
-                            else if ((string)control.Name == "bookshelf")
+                            else if ((string)control.Name == "bookshelfQ")
                             {
                                 bookshelf_pw bookshelf = new bookshelf_pw();
                                 bookshelf.ShowDialog();

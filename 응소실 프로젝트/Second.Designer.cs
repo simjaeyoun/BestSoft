@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Second));
             this.beaker4 = new System.Windows.Forms.PictureBox();
             this.desk2 = new System.Windows.Forms.PictureBox();
             this.desk = new System.Windows.Forms.PictureBox();
@@ -117,7 +116,7 @@
             // door
             // 
             this.door.BackColor = System.Drawing.Color.Silver;
-            this.door.Image = ((System.Drawing.Image)(resources.GetObject("door.Image")));
+            this.door.Image = global::로그인화면.Properties.Resources.door1;
             this.door.Location = new System.Drawing.Point(85, 28);
             this.door.Name = "door";
             this.door.Size = new System.Drawing.Size(142, 162);
@@ -149,6 +148,7 @@
             this.Controls.Add(this.beaker3);
             this.Controls.Add(this.beaker2);
             this.Controls.Add(this.beaker1);
+            this.DoubleBuffered = true;
             this.Name = "Second";
             this.Text = "Second";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyDown);
