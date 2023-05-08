@@ -287,6 +287,24 @@
   <ItemGroup>
     <None Include="Resources\beaker4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desk_memo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helicopter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rooftop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteboard.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Selenium.WebDriver.4.9.0\build\Selenium.WebDriver.targets" Condition="Exists('packages\Selenium.WebDriver.4.9.0\build\Selenium.WebDriver.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

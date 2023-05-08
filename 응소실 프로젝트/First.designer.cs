@@ -45,6 +45,7 @@
             // 
             // board
             // 
+            this.board.BackColor = System.Drawing.Color.Transparent;
             this.board.Image = ((System.Drawing.Image)(resources.GetObject("board.Image")));
             this.board.Location = new System.Drawing.Point(77, 12);
             this.board.Name = "board";
@@ -52,11 +53,11 @@
             this.board.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.board.TabIndex = 0;
             this.board.TabStop = false;
-            this.board.Tag = "board";
+            this.board.Tag = "obstacle";
             // 
             // door
             // 
-            this.door.BackColor = System.Drawing.Color.Silver;
+            this.door.BackColor = System.Drawing.Color.Transparent;
             this.door.Image = ((System.Drawing.Image)(resources.GetObject("door.Image")));
             this.door.Location = new System.Drawing.Point(739, 38);
             this.door.Name = "door";
@@ -64,10 +65,11 @@
             this.door.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.door.TabIndex = 1;
             this.door.TabStop = false;
-            this.door.Tag = "door";
+            this.door.Tag = "obstacle";
             // 
             // desk
             // 
+            this.desk.BackColor = System.Drawing.Color.Transparent;
             this.desk.Image = ((System.Drawing.Image)(resources.GetObject("desk.Image")));
             this.desk.Location = new System.Drawing.Point(77, 230);
             this.desk.Name = "desk";
@@ -75,21 +77,23 @@
             this.desk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.desk.TabIndex = 2;
             this.desk.TabStop = false;
-            this.desk.Tag = "";
+            this.desk.Tag = "obstacle";
             // 
             // desk_memo
             // 
+            this.desk_memo.BackColor = System.Drawing.Color.Transparent;
             this.desk_memo.Image = ((System.Drawing.Image)(resources.GetObject("desk_memo.Image")));
             this.desk_memo.Location = new System.Drawing.Point(328, 230);
             this.desk_memo.Name = "desk_memo";
-            this.desk_memo.Size = new System.Drawing.Size(201, 125);
+            this.desk_memo.Size = new System.Drawing.Size(196, 125);
             this.desk_memo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.desk_memo.TabIndex = 3;
             this.desk_memo.TabStop = false;
-            this.desk_memo.Tag = "desk_memo";
+            this.desk_memo.Tag = "obstacle";
             // 
             // bookshelf
             // 
+            this.bookshelf.BackColor = System.Drawing.Color.Transparent;
             this.bookshelf.Image = ((System.Drawing.Image)(resources.GetObject("bookshelf.Image")));
             this.bookshelf.Location = new System.Drawing.Point(-1, 451);
             this.bookshelf.Name = "bookshelf";
@@ -97,7 +101,7 @@
             this.bookshelf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bookshelf.TabIndex = 4;
             this.bookshelf.TabStop = false;
-            this.bookshelf.Tag = "bookshelf";
+            this.bookshelf.Tag = "obstacle";
             // 
             // player
             // 
@@ -107,6 +111,7 @@
             this.player.Size = new System.Drawing.Size(67, 71);
             this.player.TabIndex = 5;
             this.player.TabStop = false;
+            this.player.Tag = "player";
             // 
             // First
             // 

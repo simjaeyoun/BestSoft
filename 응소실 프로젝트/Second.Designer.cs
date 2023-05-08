@@ -57,6 +57,7 @@
             this.beaker4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.beaker4.TabIndex = 5;
             this.beaker4.TabStop = false;
+            this.beaker4.Tag = "obstacle";
             // 
             // desk2
             // 
@@ -67,6 +68,7 @@
             this.desk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.desk2.TabIndex = 4;
             this.desk2.TabStop = false;
+            this.desk2.Tag = "obstacle";
             // 
             // desk
             // 
@@ -77,6 +79,7 @@
             this.desk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.desk.TabIndex = 3;
             this.desk.TabStop = false;
+            this.desk.Tag = "obstacle";
             // 
             // beaker3
             // 
@@ -87,6 +90,7 @@
             this.beaker3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.beaker3.TabIndex = 2;
             this.beaker3.TabStop = false;
+            this.beaker3.Tag = "obstacle";
             // 
             // beaker2
             // 
@@ -97,6 +101,7 @@
             this.beaker2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.beaker2.TabIndex = 1;
             this.beaker2.TabStop = false;
+            this.beaker2.Tag = "obstacle";
             // 
             // beaker1
             // 
@@ -107,6 +112,7 @@
             this.beaker1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.beaker1.TabIndex = 0;
             this.beaker1.TabStop = false;
+            this.beaker1.Tag = "obstacle";
             // 
             // door
             // 
@@ -118,7 +124,7 @@
             this.door.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.door.TabIndex = 6;
             this.door.TabStop = false;
-            this.door.Tag = "door";
+            this.door.Tag = "obstacle";
             // 
             // player
             // 

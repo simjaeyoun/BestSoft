@@ -13,6 +13,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using System.Threading;
 
 namespace 로그인화면
 {
@@ -102,9 +103,15 @@ namespace 로그인화면
                 {
                 //Login falut
                     Login_Result = false; // Login 실패 했을 때 False 설정
-                    
-                    var pwfalut = driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[1]"));
-                    string LoginFalut = pwfalut.Text;
+
+
+                WebDriverWait wait3 = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+                wait3.Until(ExpectedConditions.ElementExists(
+                    By.XPath("/html/body/div[4]/div[2]/div[1]")));
+                var pwfalut = driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[1]"));
+
+
+                string LoginFalut = pwfalut.Text;
                 
                     // to find a number of login falut
                     Match match = Regex.Match(LoginFalut, @"\d+");
