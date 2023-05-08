@@ -52,7 +52,7 @@
             this.helicopter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.helicopter.TabIndex = 0;
             this.helicopter.TabStop = false;
-            this.helicopter.Tag = "helicopter";
+            this.helicopter.Tag = "obstacle";
             // 
             // pictureBox2
             // 
@@ -90,11 +90,12 @@
             this.rooftop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rooftop.TabIndex = 4;
             this.rooftop.TabStop = false;
+            this.rooftop.Tag = "obstacle";
             // 
             // player
             // 
             this.player.BackColor = System.Drawing.Color.Transparent;
-            this.player.Location = new System.Drawing.Point(758, 218);
+            this.player.Location = new System.Drawing.Point(833, 449);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(67, 71);
             this.player.TabIndex = 8;
@@ -113,6 +114,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.helicopter);
             this.Name = "Final";
+            this.Tag = "obstacle";
             this.Text = "Second";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyUp);

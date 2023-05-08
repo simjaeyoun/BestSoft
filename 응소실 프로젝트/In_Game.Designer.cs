@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(In_Game));
             this.player = new System.Windows.Forms.PictureBox();
             this.obstacle1 = new System.Windows.Forms.PictureBox();
             this.obstacle2 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.start = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obstacle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obstacle2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.start)).BeginInit();
             this.SuspendLayout();
             // 
             // player
@@ -50,6 +48,7 @@
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.player.TabIndex = 0;
             this.player.TabStop = false;
+            this.player.Tag = "player";
             // 
             // obstacle1
             // 
@@ -75,35 +74,31 @@
             this.obstacle2.TabStop = false;
             this.obstacle2.Tag = "obstacle";
             // 
-            // timer1
+            // start
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 300;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(294, 562);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 118);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "start";
+            this.start.BackColor = System.Drawing.Color.Transparent;
+            this.start.Image = ((System.Drawing.Image)(resources.GetObject("start.Image")));
+            this.start.Location = new System.Drawing.Point(294, 562);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(225, 118);
+            this.start.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.start.TabIndex = 3;
+            this.start.TabStop = false;
+            this.start.Tag = "obstacle";
             // 
             // In_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::로그인화면.Properties.Resources.Map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 721);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.start);
             this.Controls.Add(this.obstacle2);
             this.Controls.Add(this.obstacle1);
             this.Controls.Add(this.player);
+            this.DoubleBuffered = true;
             this.Name = "In_Game";
             this.Text = "In Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyDown);
@@ -111,7 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obstacle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obstacle2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.start)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,7 +116,6 @@
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.PictureBox obstacle1;
         private System.Windows.Forms.PictureBox obstacle2;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox start;
     }
 }

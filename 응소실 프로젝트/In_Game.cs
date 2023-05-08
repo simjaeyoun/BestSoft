@@ -24,7 +24,7 @@ namespace 로그인화면
             Left_Walk,
             Right_Walk
         }
-        public enum ch_Color // 캐릭터 Color 열거
+        public enum Ch_Color // 캐릭터 Color 열거
         {
             Black,
             Orange,
@@ -32,11 +32,11 @@ namespace 로그인화면
         }
 
         private Direction direction; // 방향
-        private int MoveStep = 7; // 스피드
+        private const int MoveStep = 7; // 스피드
         private int x, y;
         private bool Go_Up = true, Go_Down = true, Go_Left = true, Go_Right = true;
-        public ch_Color clr; 
-        private Image[,] images = new Image[3,8]; // images[clr][direction] -> Player의 [색깔][방향] 이미지 2차원 배열
+        public static Ch_Color clr;
+        public static Image[,] images = new Image[3,8]; // images[clr][direction] -> Player의 [색깔][방향] 이미지 2차원 배열
 
         public In_Game()
         {
@@ -78,7 +78,7 @@ namespace 로그인화면
 
         private void LoadImages() // 기본 이미지 불러오기
         {
-            if (clr == ch_Color.Black) //black
+            if (clr == Ch_Color.Black) //black
             {
                 try
                 {
@@ -97,7 +97,7 @@ namespace 로그인화면
                     MessageBox.Show("error" + e.Message);
                 }
             }
-            if (clr == ch_Color.Orange) // orange
+            if (clr == Ch_Color.Orange) // orange
             {
                 try
                 {
@@ -117,7 +117,7 @@ namespace 로그인화면
                 }
 
             }
-            if (clr == ch_Color.Green) // green
+            if (clr == Ch_Color.Green) // green
             {
                 try
                 {
@@ -176,31 +176,27 @@ namespace 로그인화면
             player.Location = new Point(x, y);
             Collision_Detection(e);
         }
-        private void Collision_Detection(KeyEventArgs e) // 충돌검사 ( Bag Obstacle은 그냥 통과하는 버그있음 고쳐야함 -상윤)
+        private void Collision_Detection(KeyEventArgs e) // 충돌검사
         {
-            foreach (Control control in this.Controls) 
+            foreach (Control control in this.Controls)
             {
-                if (control is PictureBox && ((string)control.Tag == "obstacle" || (string)control.Tag == "start"))
+                if (control is PictureBox && (string)control.Tag == "obstacle")
                 {
                     if (player.Bounds.IntersectsWith(control.Bounds))
                     {
                         control.BackColor = Color.White;
 
-                        if (direction == Direction.Up)
-                            Go_Up = false;
+                        if (direction == Direction.Up) { Go_Up = false; }
 
-                        else if (direction == Direction.Down)
-                            Go_Down = false;
+                        else if (direction == Direction.Down) { Go_Down = false; }
 
-                        else if (direction == Direction.Left)
-                            Go_Left = false;
+                        else if (direction == Direction.Left) { Go_Left = false; }
 
-                        else if (direction == Direction.Right)
-                            Go_Right = false;
+                        else if (direction == Direction.Right) { Go_Right = false; }
 
-                        if(e.KeyCode == Keys.Space) //Space 입력 시
+                        if (e.KeyCode == Keys.Space) //Space 입력 시
                         {
-                            if ((string)control.Tag == "start")
+                            if ((string)control.Name == "start")
                             {
                                 First f = new First();
                                 f.Show();
@@ -208,10 +204,8 @@ namespace 로그인화면
                             }
                             else
                                 MessageBox.Show("Space");
-                            // Space 입력 이벤트 구현 (start)
-
-                            // Space 입력 이벤트 구현 (end) 
                         }
+                        break;
                     }
                     else
                     {
@@ -223,6 +217,9 @@ namespace 로그인화면
                     }
                 }
             }
+
         }
     }
 }
+
+
