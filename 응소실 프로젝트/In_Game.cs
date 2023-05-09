@@ -46,6 +46,9 @@ namespace 로그인화면
             player.Image = images[(int)clr,(int)Direction.Down];
             x = player.Location.X;
             y = player.Location.Y;
+
+
+
         }
 
         private void color()
