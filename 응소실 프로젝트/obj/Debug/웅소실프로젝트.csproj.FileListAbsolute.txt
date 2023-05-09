@@ -84,3 +84,33 @@ C:\Users\82103\Desktop\real\응소실 프로젝트\obj\Debug\웅소실프로젝�
 C:\Users\82103\Desktop\real\응소실 프로젝트\obj\Debug\로그인화면.exe
 C:\Users\82103\Desktop\real\응소실 프로젝트\obj\Debug\로그인화면.pdb
 C:\Users\82103\Desktop\real\응소실 프로젝트\bin\Debug\Guna.UI2.dll
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\selenium-manager\linux\selenium-manager
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\selenium-manager\macos\selenium-manager
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\로그인화면.exe.config
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\로그인화면.exe
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\로그인화면.pdb
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\Guna.UI2.dll
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\SeleniumExtras.WaitHelpers.dll
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\WebDriver.dll
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\bin\Debug\WebDriver.Support.dll
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\웅소실프로젝트.csproj.AssemblyReference.cache
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\웅소실프로젝트.csproj.SuggestedBindingRedirects.cache
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.board_pw.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.bookshelf_pw.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.Select_Color.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.desk_pw.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.final_pw.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.First.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.First_passwd.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.In_Game.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.Login.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.Properties.Resources.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.Final.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.Second.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.Second_passwd.resources
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\웅소실프로젝트.csproj.GenerateResource.cache
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\웅소실프로젝트.csproj.CoreCompileInputs.cache
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\웅소실프로젝트.csproj.CopyComplete
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.exe
+C:\Users\KDH\Desktop\3-1\c#\Git_Project\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.pdb
