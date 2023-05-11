@@ -7,28 +7,6 @@ using System.Windows.Forms;
 
 namespace 로그인화면
 {
-    public class Student
-    {
-        string Stu_cat;
-        string Stu_major;
-        string Stu_num;
-        string Stu_name;
-        string Stu_state;
-        /*
-        public Student(string stu_cat, string stu_major, string stu_num, string stu_name, string stu_state)
-        {
-            Stu_cat=stu_cat;
-            Stu_major=stu_major;
-            Stu_num=stu_num;
-            Stu_name=stu_name;
-            Stu_state=stu_state;
-        }*/
-        public String[] Info {
-            get { return new String[] { Stu_cat, Stu_major, Stu_num, Stu_name, Stu_state }; }
-            set { Stu_cat = value[0]; Stu_major = value[1]; Stu_num = value[2]; Stu_name = value[3]; Stu_state = value[4]; }
-
-        }
-    }
     internal static class Program
     {
         /// <summary>
@@ -37,19 +15,39 @@ namespace 로그인화면
         [STAThread]
         static void Main()
         {
-            
+            //학생정보 담는 자료구조
+            //어떤 호스트를 나타내는지 확인 할수 있도록
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Login login = new Login();
-            Application.Run(login);
+            //Login login = new Login();
+            //Application.Run(login);
+
+            string add = "127.0.0.1";
+
+            StudentData studentData = new StudentData
+            {
+                StudentName = "심재윤",
+                StudentNum = Int32.Parse("2019203051"),
+                StudentState = "3학년재학",
+                StudentCategory = "재학",
+                StudentMajor = "소프트웨어학부",
+                Location = new Location { x=0, y = 0 }
+            };
+
+            StudentManager.AddStudent(add, studentData);
 
             In_Game Lobby = new In_Game();
-            if (login.Login_Result)
+            MainClient mainClient = new MainClient();
+            Application.Run(Lobby);
+
+            /*if (login.Login_Result)
             {
+                //클라이언트 스레드 실행
+                MainClient mainClient = new MainClient();
                 Application.Run(Lobby); // Login 폼 실행 후 Lobby 폼 실행
-            }
+            }*/
         }
     }
 }

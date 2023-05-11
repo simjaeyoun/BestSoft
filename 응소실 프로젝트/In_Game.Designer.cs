@@ -106,6 +106,7 @@
             this.Controls.Add(this.player);
             this.Name = "In_Game";
             this.Text = "In Game";
+            this.Load += new System.EventHandler(this.In_Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();

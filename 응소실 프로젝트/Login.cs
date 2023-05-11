@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace 로그인화면
         string loginUrl;
         ChromeDriver driver;
 
-        Student student = new Student();
+        StudentData studentData;
 
         public Login()
         {
@@ -90,20 +91,33 @@ namespace 로그인화면
                     var studentName = driver.FindElement(By.XPath("/html/body/main/div/div/div/div[2]/div/table[1]/tbody/tr/td[4]"));
                     var studentState = driver.FindElement(By.XPath("/html/body/main/div/div/div/div[2]/div/table[1]/tbody/tr/td[5]"));
 
+                //디바이스 주소
+                //remote end point로 수정하기
+                string add = "127.0.0.1";
 
-                    student.Info = new String[]{ category.Text, major.Text,studentNum.Text, studentName.Text, studentState.Text };
-                    /* student.Stu_cat = category.Text;
-                    Stu_major = major.Text;
-                    Stu_name = studentName.Text;
-                    Stu_num = studentNum.Text;
-                    Stu_state = studentState.Text;*/
-                }
-                catch
+                studentData = new StudentData
+                {
+                    StudentName = studentName.Text,
+                    StudentNum = Int32.Parse(studentNum.Text),
+                    StudentState = studentState.Text,
+                    StudentCategory = category.Text,
+                    StudentMajor = major.Text,
+                    Location = new Location { x=0, y = 0 }
+                };
+
+                StudentManager.AddStudent(add,studentData);
+
+            }
+            catch
                 {
                 //Login falut
                     Login_Result = false; // Login 실패 했을 때 False 설정
-                    
-                    var pwfalut = driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[1]"));
+
+                WebDriverWait wait3= new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                wait3.Until(ExpectedConditions.ElementExists(
+                    By.XPath("/html/body/div[4]/div[2]/div[1]")));
+
+                var pwfalut = driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[1]"));
                     string LoginFalut = pwfalut.Text;
                 
                     // to find a number of login falut
@@ -129,7 +143,7 @@ namespace 로그인화면
 
             if (Login_Result) // Login 결과 변수 true일 때 정보 출력 후 Login Form Close
             {
-                MessageBox.Show(student.Info[3]);
+                MessageBox.Show(studentData.StudentName);
                 this.Close();
             }
 

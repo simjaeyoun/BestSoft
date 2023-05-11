@@ -76,6 +76,11 @@ namespace 로그인화면
 
         }
 
+        private void In_Game_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void LoadImages() // 기본 이미지 불러오기
         {
             if (clr == ch_Color.Black) //black
