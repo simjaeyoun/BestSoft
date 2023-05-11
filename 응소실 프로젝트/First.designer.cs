@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(First));
-            this.player = new System.Windows.Forms.PictureBox();
             this.bookshelfQ = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -39,7 +39,7 @@
             this.board = new System.Windows.Forms.PictureBox();
             this.doorQ = new System.Windows.Forms.PictureBox();
             this.bookshelf = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bookshelfQ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,16 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.doorQ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookshelf)).BeginInit();
             this.SuspendLayout();
-            // 
-            // player
-            // 
-            this.player.BackColor = System.Drawing.Color.Transparent;
-            this.player.Location = new System.Drawing.Point(927, 322);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(67, 71);
-            this.player.TabIndex = 5;
-            this.player.TabStop = false;
-            this.player.Tag = "player";
             // 
             // bookshelfQ
             // 
@@ -157,13 +147,18 @@
             this.bookshelf.TabStop = false;
             this.bookshelf.Tag = "";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 14;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // First
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1006, 721);
-            this.Controls.Add(this.player);
             this.Controls.Add(this.bookshelf);
             this.Controls.Add(this.bookshelfQ);
             this.Controls.Add(this.pictureBox2);
@@ -176,9 +171,9 @@
             this.DoubleBuffered = true;
             this.Name = "First";
             this.Text = "First";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Paint_Character);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookshelfQ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -199,11 +194,11 @@
         private System.Windows.Forms.PictureBox desk;
         private System.Windows.Forms.PictureBox desk_memo;
         private System.Windows.Forms.PictureBox bookshelf;
-        private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox bookshelfQ;
         private System.Windows.Forms.PictureBox doorQ;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

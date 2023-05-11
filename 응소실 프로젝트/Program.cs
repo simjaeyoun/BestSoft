@@ -50,6 +50,8 @@ namespace 로그인화면
             {
                 Application.Run(Lobby); // Login 폼 실행 후 Lobby 폼 실행
             }
+
+
         }
     }
 }

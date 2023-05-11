@@ -13,39 +13,50 @@ namespace 로그인화면
 {
     public partial class In_Game : Form
     {
-        public enum Direction // 방향 열거
+        public enum Direction 
         {
             Up,
-            Down,
-            Left,
-            Right,
             Up_Walk,
+            Up_Walk2,
+            Down,
             Down_Walk,
+            Down_Walk2,
+            Left,
             Left_Walk,
-            Right_Walk
+            Left_Walk2,
+            Right,
+            Right_Walk,
+            Right_Walk2
         }
-        public enum Ch_Color // 캐릭터 Color 열거
+        public enum Ch_Color 
         {
             Black,
             Orange,
             Green
         }
 
-        private Direction direction; // 방향
-        private const int MoveStep = 7; // 스피드
-        private int x, y;
-        private bool Go_Up = true, Go_Down = true, Go_Left = true, Go_Right = true;
+        private Direction direction;
+        private int MoveStep=4;
+
+        private Image player;
+        private int playerX=0, playerY=0;
+        private int playerWidth = 50, playerHeight = 50;
+        private int slowDownFrameRate = 0, steps = 0;
+        private bool Go_Up, Go_Down, Go_Left, Go_Right;
+        private bool Block_Up=true, Block_Down=true, Block_Left=true, Block_Right=true;
+        private bool Space_Up = false, Space_Down = false, Space_Left = false, Space_Right = false;
+        private string Ob_Name;
+
         public static Ch_Color clr;
-        public static Image[,] images = new Image[3,8]; // images[clr][direction] -> Player의 [색깔][방향] 이미지 2차원 배열
+        public static Image[,] images = new Image[3,12]; /* images[clr][direction] -> Player의 [색깔][방향] 이미지 2차원 배열 */
+
 
         public In_Game()
         {
             InitializeComponent();
-            color();      // Color 선택 폼 불러오기
-            LoadImages(); // image file 불러오기
-            player.Image = images[(int)clr,(int)Direction.Down];
-            x = player.Location.X;
-            y = player.Location.Y;
+            color();      /* Color 선택 폼 불러오기 */
+            LoadImages(); /* image file 불러오기 */
+            player = images[(int)clr, (int)Direction.Down];
         }
 
         private void color()
@@ -53,30 +64,70 @@ namespace 로그인화면
             Select_Color select = new Select_Color();
             select.Owner = this;
             DialogResult Result = select.ShowDialog();
-            if (Result == DialogResult.OK)
-            {
-                MessageBox.Show("Game Start");
-            }
         }
 
-        private void timer1_Tick(object sender, EventArgs e) // Player 움직임 애니메이션 구현 
+
+        private void In_Game_KeyUp(object sender, KeyEventArgs e) 
         {
+            if (e.KeyCode == Keys.Up) { Go_Up = false; }
+            else if (e.KeyCode == Keys.Down) { Go_Down = false; }
+            else if (e.KeyCode == Keys.Left) { Go_Left = false; }
+            else if (e.KeyCode == Keys.Right) { Go_Right = false; }
         }
 
-        private void In_Game_KeyUp(object sender, KeyEventArgs e) // 키를 땠을 때 (그냥 서있는 이미지)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            try
+
+            Collision_Detection_Up();
+            Collision_Detection_Down();
+            Collision_Detection_Left();
+            Collision_Detection_Right();
+
+            if (Go_Up && Block_Up && (playerY > 0))
             {
-                player.Image = images[(int)clr, (int)direction];
+                playerY -= MoveStep;
+                AnimatePlayer(0, 2);
+                Block_Down = true;
+                Block_Left = true;
+                Block_Right = true;
             }
-            catch (Exception q) 
+            else if (Go_Down && Block_Down && (playerY + playerHeight < this.ClientSize.Height))
             {
-                MessageBox.Show("error" + q.Message);
+                playerY += MoveStep;
+                AnimatePlayer(3, 5);
+                Block_Up = true;
+                Block_Left = true;
+                Block_Right = true;
+            }
+            else if (Go_Left && Block_Left && (playerX > 0))
+            {
+                playerX -= MoveStep;
+                AnimatePlayer(6, 8);
+                Block_Up = true;
+                Block_Down = true;
+                Block_Right = true;
+            }
+            else if (Go_Right && Block_Right && (playerX + playerWidth < this.ClientSize.Width))
+            {
+                playerX += MoveStep;
+                AnimatePlayer(9, 11);
+                Block_Up = true;
+                Block_Down = true;
+                Block_Left = true;
             }
 
+            this.Invalidate();
         }
 
-        private void LoadImages() // 기본 이미지 불러오기
+        private void Paint_Character(object sender, PaintEventArgs e)
+        {
+            Graphics Canvas = e.Graphics;
+            Canvas.DrawImage(player, playerX, playerY, playerWidth, playerHeight);
+            
+        }
+
+        
+        private void LoadImages() /* 이미지 불러오기 */
         {
             if (clr == Ch_Color.Black) //black
             {
@@ -90,6 +141,10 @@ namespace 로그인화면
                     images[(int)clr, (int)Direction.Down_Walk] = Properties.Resources.a_Player_Down_Walk1;
                     images[(int)clr, (int)Direction.Left_Walk] = Properties.Resources.a_Player_Left_Walk1;
                     images[(int)clr, (int)Direction.Right_Walk] = Properties.Resources.a_Player_Right_Walk1;
+                    images[(int)clr, (int)Direction.Up_Walk2] = Properties.Resources.a_Player_Up_Walk2;
+                    images[(int)clr, (int)Direction.Down_Walk2] = Properties.Resources.a_Player_Down_Walk2;
+                    images[(int)clr, (int)Direction.Left_Walk2] = Properties.Resources.a_Player_Left_Walk2;
+                    images[(int)clr, (int)Direction.Right_Walk2] = Properties.Resources.a_Player_Right_Walk2;
 
                 }
                 catch (Exception e)
@@ -109,6 +164,10 @@ namespace 로그인화면
                     images[(int)clr, (int)Direction.Down_Walk] = Properties.Resources.a_Player_Down_Walk1;
                     images[(int)clr, (int)Direction.Left_Walk] = Properties.Resources.a_Player_Left_Walk1;
                     images[(int)clr, (int)Direction.Right_Walk] = Properties.Resources.a_Player_Right_Walk1;
+                    images[(int)clr, (int)Direction.Up_Walk2] = Properties.Resources.a_Player_Up_Walk2;
+                    images[(int)clr, (int)Direction.Down_Walk2] = Properties.Resources.a_Player_Down_Walk2;
+                    images[(int)clr, (int)Direction.Left_Walk2] = Properties.Resources.a_Player_Left_Walk2;
+                    images[(int)clr, (int)Direction.Right_Walk2] = Properties.Resources.a_Player_Right_Walk2;
 
                 }
                 catch (Exception e)
@@ -129,6 +188,10 @@ namespace 로그인화면
                     images[(int)clr, (int)Direction.Down_Walk] = Properties.Resources.a_Player_Down_Walk1;
                     images[(int)clr, (int)Direction.Left_Walk] = Properties.Resources.a_Player_Left_Walk1;
                     images[(int)clr, (int)Direction.Right_Walk] = Properties.Resources.a_Player_Right_Walk1;
+                    images[(int)clr, (int)Direction.Up_Walk2] = Properties.Resources.a_Player_Up_Walk2;
+                    images[(int)clr, (int)Direction.Down_Walk2] = Properties.Resources.a_Player_Down_Walk2;
+                    images[(int)clr, (int)Direction.Left_Walk2] = Properties.Resources.a_Player_Left_Walk2;
+                    images[(int)clr, (int)Direction.Right_Walk2] = Properties.Resources.a_Player_Right_Walk2;
 
                 }
                 catch (Exception e)
@@ -139,91 +202,124 @@ namespace 로그인화면
             }
         }
 
-        public void SetDirection(Direction newDirection) // Key 입력 시 방향 설정 & Player Image 변경 (움직이는 이미지) 
+        
+        private void In_Game_KeyDown(object sender, KeyEventArgs e)
         {
-            direction = newDirection;
-            try
+            if (e.KeyCode == Keys.Up) { Go_Up = true; }
+            else if (e.KeyCode == Keys.Down) { Go_Down = true; }
+            else if (e.KeyCode == Keys.Left) { Go_Left = true; }
+            else if (e.KeyCode == Keys.Right) { Go_Right = true; }
+            else if((e.KeyCode == Keys.Space) && Space_Up || Space_Down || Space_Left || Space_Right) 
             {
-                    player.Image = images[(int)clr, (int)direction + 4];
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("error" + e.Message);
+                Go_Up = false; Go_Down = false; Go_Left = false; Go_Right = false;
+                if (Ob_Name == "start")
+                {
+                    /* 게임 시작 */
+                    First first = new First();
+                    first.Show();
+                    this.Hide();
+                }
+                else { MessageBox.Show(Ob_Name); }
             }
         }
 
-        private void In_Game_KeyDown(object sender, KeyEventArgs e)
+
+        private void Collision_Detection_Right() 
         {
-            switch (e.KeyCode)
+            foreach(Control control in this.Controls)
             {
-                case Keys.Up:
-                    if (Go_Up)
-                        y -= MoveStep; SetDirection(Direction.Up);
-                    break;
-                case Keys.Down:
-                    if (Go_Down)
-                        y += MoveStep; SetDirection(Direction.Down);
-                    break;
-                case Keys.Left:
-                    if (Go_Left)
-                        x -= MoveStep; SetDirection(Direction.Left);
-                    break;
-                case Keys.Right:
-                    if (Go_Right)
-                        x += MoveStep; SetDirection(Direction.Right);
-                    break;
+                if(control is PictureBox && (string)control.Tag == "obstacle")
+                {
+                    /* Player Right 충돌검사 */
+                    if (playerX < control.Location.X && playerX+playerWidth >= control.Location.X && playerY + playerHeight >= control.Location.Y + 10
+                        && playerY <= control.Location.Y + control.Height - 20)
+                    {
+                        Block_Right = false;
+                        Space_Right = true;
+                        Ob_Name = control.Name; /* Player와 충돌된 Obstacle Name 저장 */
+                        break;
+                    }else { Space_Right = false; }
+                }
             }
-            if (x >= 0 && x + player.Width <= ClientSize.Width && // form 화면을 벗어나지 않게 함
-                y >= 0 && y + player.Height <= ClientSize.Height)
-            {
-                player.Left = x;
-                player.Top = y;
-            }
-            //player.Location = new Point(x, y);
-            Collision_Detection(e);
         }
-        private void Collision_Detection(KeyEventArgs e) // 충돌검사
+        private void Collision_Detection_Up()
         {
             foreach (Control control in this.Controls)
             {
                 if (control is PictureBox && (string)control.Tag == "obstacle")
                 {
-                    if (player.Bounds.IntersectsWith(control.Bounds))
+                    /* Player Up 충돌검사 */
+                    if (playerY > control.Location.Y && playerY <= control.Location.Y + control.Height - 10 && playerX + playerWidth >= control.Location.X + 20
+                        && playerX <= control.Location.X + control.Width - 20)
                     {
-                        control.BackColor = Color.White;
-
-                        if (direction == Direction.Up) { Go_Up = false; }
-
-                        else if (direction == Direction.Down) { Go_Down = false; }
-
-                        else if (direction == Direction.Left) { Go_Left = false; }
-
-                        else if (direction == Direction.Right) { Go_Right = false; }
-
-                        if (e.KeyCode == Keys.Space) //Space 입력 시
-                        {
-                            if ((string)control.Name == "start")
-                            {
-                                First f = new First();
-                                f.Show();
-                                this.Hide();
-                            }
-                            else
-                                MessageBox.Show("Space");
-                        }
+                        Block_Up = false;
+                        Space_Up = true;
+                        Ob_Name = control.Name;
                         break;
                     }
-                    else
-                    {
-                        Go_Up = true;
-                        Go_Down = true;
-                        Go_Left = true;
-                        Go_Right = true;
-                        control.BackColor = Color.Transparent;
-                    }
+                    else { Space_Up = false; }
                 }
             }
+        }
 
+        private void Collision_Detection_Left()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is PictureBox && (string)control.Tag == "obstacle")
+                {
+                    /* Player Left 충돌검사 */
+                    if (playerX + playerWidth > control.Location.X + control.Width && playerX <= control.Location.X + control.Width && playerY + playerHeight >= control.Location.Y + 10
+                        && playerY <= control.Location.Y + control.Height - 20)
+                    {
+                        Block_Left = false;
+                        Space_Left = true;
+                        Ob_Name = control.Name;
+                        break;
+                    }
+                    else { Space_Left = false; }
+
+                }
+            }
+        }
+
+        private void Collision_Detection_Down()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is PictureBox && (string)control.Tag == "obstacle")
+                {
+                    /* Player Down 충돌검사 */
+                    if (playerY < control.Location.Y && playerY + playerHeight >= control.Location.Y  && playerX + playerWidth >= control.Location.X + 20
+                        && playerX <= control.Location.X + control.Width - 20 )
+                    {
+                        Block_Down = false;
+                        Space_Down = true;
+                        Ob_Name = control.Name;
+                        break;
+                    }
+                    else { Space_Down = false; }
+
+                }
+            }
+        }
+
+        private void AnimatePlayer(int start, int end)
+        {
+            slowDownFrameRate++;
+            /* player animation 구현 -> 4번 호출 될 때마다 이미지 변경 */
+            if (slowDownFrameRate == 4)
+            {
+                steps++;
+                slowDownFrameRate = 0;
+            }
+
+            /* 정지 -> 왼발 -> 오른발 -> 정지 .... 순서 */
+            if ((steps > end) || (steps < start))
+            {
+                steps = start;
+            }
+            player = images[(int)clr, steps];
         }
     }
 }
