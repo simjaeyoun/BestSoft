@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Final));
             this.helicopter = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.rooftop = new System.Windows.Forms.PictureBox();
-            this.player = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.helicopter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rooftop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // helicopter
@@ -92,14 +92,11 @@
             this.rooftop.TabStop = false;
             this.rooftop.Tag = "obstacle";
             // 
-            // player
+            // timer1
             // 
-            this.player.BackColor = System.Drawing.Color.Transparent;
-            this.player.Location = new System.Drawing.Point(833, 449);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(67, 71);
-            this.player.TabIndex = 8;
-            this.player.TabStop = false;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 14;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Final
             // 
@@ -107,7 +104,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1082, 653);
-            this.Controls.Add(this.player);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.rooftop);
             this.Controls.Add(this.pictureBox4);
@@ -116,7 +112,8 @@
             this.DoubleBuffered = true;
             this.Name = "Final";
             this.Tag = "obstacle";
-            this.Text = "Second";
+            this.Text = "Final";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Paint_Character);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.helicopter)).EndInit();
@@ -124,7 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rooftop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,6 +132,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox rooftop;
-        private System.Windows.Forms.PictureBox player;
+        private System.Windows.Forms.Timer timer1;
     }
 }

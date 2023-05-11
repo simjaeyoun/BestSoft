@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.beaker4 = new System.Windows.Forms.PictureBox();
             this.desk2 = new System.Windows.Forms.PictureBox();
             this.desk = new System.Windows.Forms.PictureBox();
@@ -35,7 +36,7 @@
             this.beaker2 = new System.Windows.Forms.PictureBox();
             this.beaker1 = new System.Windows.Forms.PictureBox();
             this.door = new System.Windows.Forms.PictureBox();
-            this.player = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.beaker4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desk2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desk)).BeginInit();
@@ -43,7 +44,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.beaker2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beaker1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.door)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // beaker4
@@ -125,14 +125,11 @@
             this.door.TabStop = false;
             this.door.Tag = "obstacle";
             // 
-            // player
+            // timer1
             // 
-            this.player.BackColor = System.Drawing.Color.Transparent;
-            this.player.Location = new System.Drawing.Point(27, 259);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(67, 71);
-            this.player.TabIndex = 7;
-            this.player.TabStop = false;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 14;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Second
             // 
@@ -140,7 +137,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1006, 721);
-            this.Controls.Add(this.player);
             this.Controls.Add(this.door);
             this.Controls.Add(this.beaker4);
             this.Controls.Add(this.desk2);
@@ -151,6 +147,7 @@
             this.DoubleBuffered = true;
             this.Name = "Second";
             this.Text = "Second";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Paint_Character);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.In_Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.beaker4)).EndInit();
@@ -160,7 +157,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.beaker2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beaker1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.door)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,6 +170,6 @@
         private System.Windows.Forms.PictureBox desk2;
         private System.Windows.Forms.PictureBox beaker4;
         private System.Windows.Forms.PictureBox door;
-        private System.Windows.Forms.PictureBox player;
+        private System.Windows.Forms.Timer timer1;
     }
 }
