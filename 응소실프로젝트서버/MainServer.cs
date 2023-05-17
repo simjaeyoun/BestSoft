@@ -9,14 +9,16 @@ using System.Collections.Concurrent;
 using Newtonsoft.Json;
 using System.Reflection;
 
+//await async
+
 namespace 응소실프로젝트서버
 {
     class MainServer
     {
 
-        ClientManager clientManager = null;
-        ConcurrentBag<string> AccessLog = null;
-        Thread ConectCheckHost = null;
+        ClientManager? clientManager = null;
+        ConcurrentBag<string>? AccessLog = null;
+        Thread? ConectCheckHost = null;
            
         public MainServer()
         {
@@ -56,8 +58,7 @@ namespace 응소실프로젝트서버
             while (true)
             {
                 SendData("<Server Check>", PacketType.AboutServerCheck, "");
-
-                Thread.Sleep(1000);
+                Thread.Sleep(5000);
             }
 
         }
@@ -67,46 +68,49 @@ namespace 응소실프로젝트서버
         {
             AccessLog.Add(message);  
         }
-        private void LocationParsing(Location location,string sender)
+        private async void LocationParsing(Location location,string sender)
         {
-            SendData(location, PacketType.AboutLocation, sender);
+            await Task.Run(()=>SendData(location, PacketType.AboutLocation, sender));
         }
-        private void RemoveClient(ClientData clientData)
+        private async void RemoveClient(ClientData clientData)
         {
             ClientData result = null;
             ClientManager.clientDic.TryRemove(clientData.clientID, out result);
             string leaveLog = string.Format("[{0}] {1} Leave Server", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), result.StudentData.StudentName);
             ClientAcess(leaveLog);
 
-            SendData(result.StudentData, PacketType.AboutRemove, result.clientID);
+            await Task.Run(() => SendData(result.StudentData, PacketType.AboutRemove, result.clientID));
 
             //클라이언트 들에게 picture없애게 하기
             //클라이언트 자료구조에서 없어지는 거 제외하기
 
         }
-        private void AlarmAllClient(StudentData studentData,string sender)
+        private async void AlarmAllClient(StudentData studentData,string sender)
         {
+
             string accessLog = string.Format("[{0}] {1} Access Server", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), studentData.StudentName);
             ClientAcess(accessLog);
-            
+
             //모든 cli한테 새롭게 connect된 cli정보 보내기
-            SendData(studentData,PacketType.AboutConnect,sender);
+            await Task.Run(() => SendData(studentData, PacketType.AboutConnect, sender));
 
 
-            //connect된 cli한테 모든 데이터 보내기
+            //connect된 cli한테 모든 cli 데이터 보내기
             foreach(var item in  ClientManager.clientDic.Keys)
             {
                 if (item == sender)
                     continue;
-                Packet packet = new Packet { 
-                    packet = ClientManager.clientDic[item].
-                    StudentData, modifierID = item,
+
+                Packet<StudentData> packet = new Packet<StudentData> { 
+                    packet = ClientManager.clientDic[item].StudentData,
+                    modifierID = item,
                     packetType = PacketType.AboutConnect
                 };
                 string json = JsonConvert.SerializeObject(packet);
                 byte[] sendBytes = Encoding.UTF8.GetBytes(json);
                 ClientManager.clientDic[sender].tcpClient.GetStream().Write(sendBytes, 0, sendBytes.Length);
-
+                //here
+                
             }
 
 
@@ -117,7 +121,7 @@ namespace 응소실프로젝트서버
         {
 
             string json = null;
-            Packet Packet = null;
+            Packet<object> Packet = null;
             object sendedData = null;
 
 
@@ -147,7 +151,7 @@ namespace 응소실프로젝트서버
 
             if (sendedData != null)
             {
-                Packet = new Packet { packet = sendedData, packetType = packetType, modifierID = modifierID };
+                Packet = new Packet<object> { packet = sendedData, packetType = packetType, modifierID = modifierID };
                 json = JsonConvert.SerializeObject(Packet);
             }
 
@@ -163,32 +167,40 @@ namespace 응소실프로젝트서버
                     }
                     //즉각 반영 안되면 thread로 만들어서 돌리기
                     ClientManager.clientDic[i].tcpClient.GetStream().Write(sendBytes, 0, sendBytes.Length);
-
+                   
                 }
-                catch
+                catch (Exception e)
                 {
                     //check하는데 cli에게 write가 안되면 없앰
                     RemoveClient(ClientManager.clientDic[i]);
                 }
             }
         }
-
+        
         public void view()
         {
             while (true)
             {
-                if (AccessLog.Count == 0)
+                if (ClientManager.clientDic.Count == 0)
                 {
                     Console.WriteLine("접속기록이 없습니다.");
-                    Console.ReadKey();
+                    //Thread.Sleep(1000);
                     //return;
                 }
-
-                foreach (var item in AccessLog)
+                else
                 {
-                    Console.WriteLine(item);
-                }
+                    foreach (var item in AccessLog)
+                    {
+                        Console.WriteLine(AccessLog.Count);
+                        Console.WriteLine(item);
+                    }
 
+                    foreach ( var item in ClientManager.clientDic.Keys)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+                //Console.WriteLine("here");
                 Console.ReadKey();
 
             }

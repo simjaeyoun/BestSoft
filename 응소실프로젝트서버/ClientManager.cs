@@ -12,18 +12,11 @@ using Newtonsoft.Json.Linq;
 
 namespace 응소실프로젝트서버
 {
-    class PacketType{
-        public const int AboutLocation = 1;
-        public const int AboutConnect = 2;
-        public const int AboutRemove = 3;
-        public const int AboutServerCheck = 4;
-    }
-    class Packet
-    {
-        public object packet { get; set; }
-        public int packetType { get; set; }
-        public string modifierID { get; set; }
-    }
+    
+    //제네릭으로 하기
+    //해보고 다른 방향 모색
+
+
     class ClientManager
     {
         public static ConcurrentDictionary<string, ClientData> clientDic = new ConcurrentDictionary<string, ClientData>();
@@ -41,8 +34,9 @@ namespace 응소실프로젝트서버
             ClientData currentClient = new ClientData(newClient);
             try
             {
-                currentClient.tcpClient.GetStream().BeginRead(currentClient.readBuffer, 0, currentClient.readBuffer.Length, new AsyncCallback(DataReceived), currentClient);
                 clientDic.TryAdd(currentClient.clientID, currentClient);
+                //currentClient.tcpClient.GetStream().BeginRead(currentClient.readBuffer, 0, currentClient.readBuffer.Length, new AsyncCallback(DataReceived), currentClient);
+                Task.Run(() => DataReceived(currentClient));
             }
 
             catch (Exception e)
@@ -51,32 +45,30 @@ namespace 응소실프로젝트서버
             }
         }
 
-        private void DataReceived(IAsyncResult ar)
+        //async 메서드는 void 아니면 Task를 반환
+        private async Task DataReceived(ClientData client)
         {
 
-            ClientData client = ar.AsyncState as ClientData;
+            //ClientData client = ar.AsyncState as ClientData;
 
             try
             {
-                int byteLength = client.tcpClient.GetStream().EndRead(ar);
+                int byteLength = await client.tcpClient.GetStream().ReadAsync(client.readBuffer, 0, client.readBuffer.Length);
                 string receivedJson = Encoding.UTF8.GetString(client.readBuffer, 0, byteLength);
-                Packet ReceiveData = JsonConvert.DeserializeObject<Packet>(receivedJson);
-                //json
+                Packet<object> ReceiveData = JsonConvert.DeserializeObject<Packet<object>>(receivedJson);
 
+                
                 //클라이언트가 종료됐을때
                 if (ReceiveData.packetType == PacketType.AboutRemove)
                 {
                     if(RemoveHandler != null)
                     {
-                        RemoveHandler.BeginInvoke(client, null, null);
+                        Console.WriteLine("remove packet");
+                        await Task.Run(() => RemoveHandler.Invoke(client));
                         return;
                     }
                 }
-
-                //비동기 처리 종료했을때는 제외함
-                client.tcpClient.GetStream().BeginRead(client.readBuffer, 0, client.readBuffer.Length, new AsyncCallback(DataReceived), client);
-
-
+                
                 //처음에는 학생 정보 가져오기 및 클라이언트에게 다른 클라이언트 보이도록
                 if (ReceiveData.packetType == PacketType.AboutConnect)
                 {
@@ -85,22 +77,19 @@ namespace 응소실프로젝트서버
                         //모든 클라이언트에게 모든 클라이언트의 piture보여주기
                         //모든 클라이언트에게 모든 클라리언트의 정보 알려주기
                         //접속하기
-                        StudentData studentData = ReceiveData.packet as StudentData;
-                        
+
+                        StudentData studentData = JsonConvert.DeserializeObject<Packet<StudentData>>(receivedJson).packet;
+
 
                         if (studentData != null)
                         {
-                            client.StudentData = studentData;
+                            client.StudentData = (StudentData)studentData;
                         }
-                        Console.WriteLine(ReceiveData.packet.GetType());
-                        Console.WriteLine('\n');
-                        Console.WriteLine(studentData?.GetType());
-                        Console.WriteLine('\n');
+                        //method that creates and starts a new Task to execute a specified delegate asynchronously on a thread pool thread.
+                        //Task.Run(() => ConstructHandler.Invoke(client.StudentData, ReceiveData.modifierID ));
+                        Console.WriteLine("connect packet");
+                        await Task.Run(()=>ConstructHandler.Invoke(client.StudentData, ReceiveData.modifierID));
 
-                        //Console.WriteLine(ReceiveData.modifierID);
-
-                        ConstructHandler.BeginInvoke(client.StudentData, ReceiveData.modifierID ,null, null);
-                        return;
 
                     }
 
@@ -110,17 +99,22 @@ namespace 응소실프로젝트서버
                 {
                     if(LocationParsingAction != null)
                     {
-                        var Location = ReceiveData.packet as Location;
+                        Location Location = JsonConvert.DeserializeObject<Packet<Location>>(receivedJson).packet;
+
                         if (Location != null)
                             client.StudentData.Location = Location;
                         //첫번째 null은 이 작업이 완료 되기 전까지는 endinvoke호출 불가
                         //일을 처리하는데 정보의 상태가 필요 없다면 null
-                        LocationParsingAction.BeginInvoke(client.StudentData.Location, ReceiveData.modifierID, null, null);
+                        Console.WriteLine("location packet");
+                        await Task.Run(() => LocationParsingAction.Invoke(client.StudentData.Location, ReceiveData.modifierID));
 
                     }
                 }
+                //비동기 처리 종료했을때는 제외함
+                //client.tcpClient.GetStream().BeginRead(client.readBuffer, 0, client.readBuffer.Length, new AsyncCallback(DataReceived), client);
 
-
+                await DataReceived(client);
+                return;
 
             }
             catch (Exception e)

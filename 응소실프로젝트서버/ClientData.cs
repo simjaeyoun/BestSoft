@@ -7,12 +7,26 @@ using System.Threading.Tasks;
 
 namespace 응소실프로젝트서버
 {
-    class Location
+    class PacketType
+    {
+        public const int AboutLocation = 1;
+        public const int AboutConnect = 2;
+        public const int AboutRemove = 3;
+        public const int AboutServerCheck = 4;
+    }
+    class Packet<T>
+    {
+        public T packet { get; set; }
+        public int packetType { get; set; }
+        public string modifierID { get; set; }
+    }
+
+    class Location 
     {
         public int x { get; set; }
         public int y { get; set; }
     }
-    class StudentData
+    class StudentData 
     {
         public string StudentName { get; set; }
         public int StudentNum { get; set; }
@@ -38,7 +52,8 @@ namespace 응소실프로젝트서버
 
             this.tcpClient = tcpClient;
 
-            this.clientID = tcpClient.Client.LocalEndPoint.ToString();
+           
+            this.clientID = tcpClient.Client.LocalEndPoint.ToString().Split(":")[0];
 
             /*
             char[] splitDivision = new char[2];
