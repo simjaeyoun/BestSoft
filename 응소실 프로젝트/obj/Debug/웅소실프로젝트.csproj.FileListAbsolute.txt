@@ -112,3 +112,7 @@ C:\Users\ksksy\Desktop\응소실\gir_res_0509\BestSoft\응소실 프로젝트\ob
 C:\Users\ksksy\Desktop\응소실\gir_res_0509\BestSoft\응소실 프로젝트\obj\Debug\웅소실프로젝트.csproj.CopyComplete
 C:\Users\ksksy\Desktop\응소실\gir_res_0509\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.exe
 C:\Users\ksksy\Desktop\응소실\gir_res_0509\BestSoft\응소실 프로젝트\obj\Debug\로그인화면.pdb
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실 프로젝트\bin\Debug\Guna.UI2.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실 프로젝트\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실 프로젝트\bin\Debug\NuGet.Frameworks.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실 프로젝트\bin\Debug\Newtonsoft.Json.xml
