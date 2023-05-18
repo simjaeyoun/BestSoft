@@ -7,28 +7,7 @@ using System.Windows.Forms;
 
 namespace 로그인화면
 {
-    public class Student
-    {
-        string Stu_cat;
-        string Stu_major;
-        string Stu_num;
-        string Stu_name;
-        string Stu_state;
-        /*
-        public Student(string stu_cat, string stu_major, string stu_num, string stu_name, string stu_state)
-        {
-            Stu_cat=stu_cat;
-            Stu_major=stu_major;
-            Stu_num=stu_num;
-            Stu_name=stu_name;
-            Stu_state=stu_state;
-        }*/
-        public String[] Info {
-            get { return new String[] { Stu_cat, Stu_major, Stu_num, Stu_name, Stu_state }; }
-            set { Stu_cat = value[0]; Stu_major = value[1]; Stu_num = value[2]; Stu_name = value[3]; Stu_state = value[4]; }
-
-        }
-    }
+    
     internal static class Program
     {
         /// <summary>
@@ -43,15 +22,26 @@ namespace 로그인화면
             Application.SetCompatibleTextRenderingDefault(false);
 
             Login login = new Login();
+
             Application.Run(login);
 
+            MainClient mainClient = new MainClient();
+            
             In_Game Lobby = new In_Game();
+
+            Application.ApplicationExit += Application_ApplicationExit;
+
             if (login.Login_Result)
             {
                 Application.Run(Lobby); // Login 폼 실행 후 Lobby 폼 실행
             }
 
 
+        }
+        private static void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            // Terminate the application
+            Environment.Exit(0);
         }
     }
 }

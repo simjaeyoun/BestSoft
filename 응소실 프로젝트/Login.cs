@@ -25,7 +25,8 @@ namespace 로그인화면
         string loginUrl;
         ChromeDriver driver;
 
-        Student student = new Student();
+
+        StudentData studentData;
 
         public Login()
         {
@@ -92,14 +93,22 @@ namespace 로그인화면
                     var studentState = driver.FindElement(By.XPath("/html/body/main/div/div/div/div[2]/div/table[1]/tbody/tr/td[5]"));
 
 
-                    student.Info = new String[]{ category.Text, major.Text,studentNum.Text, studentName.Text, studentState.Text };
-                    /* student.Stu_cat = category.Text;
-                    Stu_major = major.Text;
-                    Stu_name = studentName.Text;
-                    Stu_num = studentNum.Text;
-                    Stu_state = studentState.Text;*/
-                }
-                catch
+                string add = "127.0.0.1";
+
+                studentData = new StudentData
+                {
+                    StudentName = studentName.Text,
+                    StudentNum = Int32.Parse(studentNum.Text),
+                    StudentState = studentState.Text,
+                    StudentCategory = category.Text,
+                    StudentMajor = major.Text,
+                    Location = new Location { x=0, y = 0 }
+                };
+
+
+                StudentManager.AddStudent(add, studentData);
+            }
+            catch
                 {
                 //Login falut
                     Login_Result = false; // Login 실패 했을 때 False 설정
@@ -136,7 +145,6 @@ namespace 로그인화면
 
             if (Login_Result) // Login 결과 변수 true일 때 정보 출력 후 Login Form Close
             {
-                MessageBox.Show(student.Info[3]);
                 this.Close();
             }
 
