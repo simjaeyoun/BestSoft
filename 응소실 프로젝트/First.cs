@@ -29,50 +29,10 @@ namespace 로그인화면
             player.Image = In_Game.images[(int)In_Game.clr, (int)Direction.Down];
             x = player.Location.X;
             y = player.Location.Y;
-            //SetStyle(ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
-            //BackColor = Color.Transparent;
-            //chatInput = new TextBox
-            //{
-            //    Location = new Point(10, 400),
-            //    Size = new Size(300, 20),
-            //    Visible = false
-            //};
-            //chatInput.KeyDown += In_Game_KeyDown;
-            //Controls.Add(chatInput);
-            //chatLog = new TextBox
-            //{
-            //    Location = new Point(10, 10),
-            //    Size = new Size(300, 390),
-            //    Multiline = true,
-            //    ReadOnly = true,
-            //    ScrollBars = ScrollBars.Vertical,
-            //    Visible = false
-
-            //};
-            //Controls.Add(chatLog);
-            //chatBubble = new PictureBox
-            //{
-            //    Location = new Point(320, 250),
-            //    Size = new Size(200, 150),
-            //    // 이미지를 로드하려면 아래 주석을 해제하고 이미지 파일 경로를 수정하세요.
-            //    // Image = Image.FromFile("./bubble.png"),
-            //    BorderStyle = BorderStyle.FixedSingle,
-            //    SizeMode = PictureBoxSizeMode.StretchImage,
-            //    //Image = Properties.Resources.bubble
-            //    Image = null,
-            //    Visible = false
-
-            //};
-            //Controls.Add(chatBubble);
+     
 
         }
-        //protected override void OnPaint(PaintEventArgs e)
-        //{
-        //    using (SolidBrush brush = new SolidBrush(ForeColor))
-        //    {
-        //        e.Graphics.DrawString(Text, Font, brush, new PointF(0, 0));
-        //    }
-        //}
+    
 
         private void In_Game_KeyUp(object sender, KeyEventArgs e) // 키를 땠을 때 (그냥 서있는 이미지)
         {
@@ -86,11 +46,7 @@ namespace 로그인화면
             }
 
         }
-        //private void ChatInput_TextChanged(object sender, EventArgs e)
-        //{
-        //    ChatInput.SelectionStart = 0;
-        //}
-
+  
 
         public void SetDirection(Direction newDirection) // Key 입력 시 방향 설정 & Player Image 변경 (움직이는 이미지) 
         {
@@ -165,6 +121,8 @@ namespace 로그인화면
                     ChatInput.BackColor = this.BackColor;
                     ChatLog.Visible = true;
                     ChatLog.BackColor = this.BackColor;
+                    ChatInput.Focus();
+                    
                     break;
                 case Keys.Escape:
                     ChatInput.Visible = false;
