@@ -37,5 +37,11 @@ namespace 로그인화면
             In_Game main = (In_Game)Owner;
             In_Game.clr = In_Game.Ch_Color.Black;
         }
+
+        private void Select_Color_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing) // x버튼을 눌러서 종료했을 때 실행
+                Application.Exit();
+        }
     }
 }

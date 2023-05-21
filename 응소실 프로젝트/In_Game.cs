@@ -215,8 +215,10 @@ namespace 로그인화면
                 if (Ob_Name == "start")
                 {
                     /* 게임 시작 */
-                    First first = new First();
-                    first.Show();
+                    //First first = new First();
+                    //first.Show();
+                    Map_Select map_Select = new Map_Select();
+                    map_Select.Show();
                     this.Hide();
                 }
                 else { MessageBox.Show(Ob_Name); }

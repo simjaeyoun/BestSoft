@@ -79,6 +79,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Select_Color";
             this.Text = "Color Select";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Select_Color_FormClosing);
             this.ResumeLayout(false);
 
         }
