@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,8 +27,26 @@ namespace 로그인화면
 
             Application.Run(login);
 
-            MainClient mainClient = new MainClient();
+
+            /*
+            string hostName = Dns.GetHostName();
+            IPHostEntry hostEntry = Dns.GetHostEntry(hostName);
+
+            foreach (IPAddress ipAddress in hostEntry.AddressList)
+            {
+                if (ipAddress.AddressFamily == AddressFamily.InterNetwork) // IPv4 address
+                {
+                    var selectedIpAddress = ipAddress;
+                    MessageBox.Show("IP Address: " + selectedIpAddress);
+                    break;
+                }
+
+                
+            }
+            */
             
+            MainClient mainClient = new MainClient();
+
             In_Game Lobby = new In_Game();
 
             Application.ApplicationExit += Application_ApplicationExit;
