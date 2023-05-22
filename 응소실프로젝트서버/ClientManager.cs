@@ -28,6 +28,10 @@ namespace 응소실프로젝트서버
         public event Action<StudentData,string> ConstructHandler = null;
         //클라이언트 없애기
         public event Action<ClientData> RemoveHandler = null;
+        //Key 
+        public event Action<Move_Key, string> Move_KeyParsingAction = null;
+        //Character
+        public event Action<Ch_Color, string> CharacterAction = null;
 
         public void AddClient(TcpClient newClient)
         {
@@ -94,8 +98,36 @@ namespace 응소실프로젝트서버
                     }
 
                 }
+                if (ReceiveData.packetType == PacketType.AboutKey)
+                {
+
+                    Move_Key key = JsonConvert.DeserializeObject<Packet<Move_Key>>(receivedJson).packet;
+
+                    if (key != null)
+                        client.StudentData.key = key;
+                    //첫번째 null은 이 작업이 완료 되기 전까지는 endinvoke호출 불가
+                    //일을 처리하는데 정보의 상태가 필요 없다면 null
+                    Console.WriteLine("Move_Key packet");
+                    await Task.Run(() => Move_KeyParsingAction.Invoke(client.StudentData.key, ReceiveData.modifierID));
+
+                }
+
+                if (ReceiveData.packetType == PacketType.AboutCharacter)
+                {
+
+                    Ch_Color clr = JsonConvert.DeserializeObject<Packet<Ch_Color>>(receivedJson).packet;
+
+                    if (Ch_Color.Black <= clr && Ch_Color.UnKnown >= clr)
+                        client.StudentData.clr = clr;
+                    //첫번째 null은 이 작업이 완료 되기 전까지는 endinvoke호출 불가
+                    //일을 처리하는데 정보의 상태가 필요 없다면 null
+                    Console.WriteLine("Character packet");
+                    await Task.Run(() => CharacterAction.Invoke(client.StudentData.clr, ReceiveData.modifierID));
+
+                }
+
                 //학생의 위치 받고, 클라이언트 들에게 뿌리기
-                if(ReceiveData.packetType == PacketType.AboutLocation)
+                if (ReceiveData.packetType == PacketType.AboutLocation)
                 {
                     if(LocationParsingAction != null)
                     {

@@ -7,12 +7,21 @@ using System.Threading.Tasks;
 
 namespace 응소실프로젝트서버
 {
+   public enum Ch_Color
+    {
+        Black,
+        Orange,
+        Green,
+        UnKnown
+    }
     class PacketType
     {
         public const int AboutLocation = 1;
         public const int AboutConnect = 2;
         public const int AboutRemove = 3;
         public const int AboutServerCheck = 4;
+        public const int AboutKey = 5;
+        public const int AboutCharacter = 6;
     }
     class Packet<T>
     {
@@ -23,8 +32,15 @@ namespace 응소실프로젝트서버
 
     class Location 
     {
-        public int x { get; set; }
-        public int y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+    }
+    class Move_Key
+    {
+        public bool Go_Up { get; set; }
+        public bool Go_Down { get; set; }
+        public bool Go_Left { get; set; }
+        public bool Go_Right { get; set; }
     }
     class StudentData 
     {
@@ -33,8 +49,9 @@ namespace 응소실프로젝트서버
         public string StudentState { get; set; }
         public string StudentMajor { get; set; }
         public string StudentCategory { get; set; }
-        
+        public Ch_Color clr { get; set; }
         public Location Location {get; set; }
+        public Move_Key key { get; set; }
 
     }
     class ClientData

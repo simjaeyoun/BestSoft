@@ -27,6 +27,8 @@ namespace 응소실프로젝트서버
             clientManager.ConstructHandler += AlarmAllClient;
             clientManager.LocationParsingAction += LocationParsing;
             clientManager.RemoveHandler += RemoveClient;
+            clientManager.Move_KeyParsingAction += Move_KeyParsing;
+            clientManager.CharacterAction += CharcterParsing;
 
             Task serverStart = Task.Run(() =>
             {
@@ -71,6 +73,14 @@ namespace 응소실프로젝트서버
         private async void LocationParsing(Location location,string sender)
         {
             await Task.Run(()=>SendData(location, PacketType.AboutLocation, sender));
+        }
+        private async void Move_KeyParsing(Move_Key key, string sender)
+        {
+            await Task.Run(() => SendData(key, PacketType.AboutKey, sender));
+        }
+        private async void CharcterParsing(Ch_Color clr, string sender)
+        {
+            await Task.Run(() => SendData(clr, PacketType.AboutCharacter, sender));
         }
         private async void RemoveClient(ClientData clientData)
         {
@@ -145,6 +155,16 @@ namespace 응소실프로젝트서버
                 case PacketType.AboutServerCheck:
                     {
                         sendedData = sendData as string;
+                        break;
+                    }
+                case PacketType.AboutKey:
+                    {
+                        sendedData = sendData as Move_Key;
+                        break;
+                    }
+                case PacketType.AboutCharacter:
+                    {
+                        sendedData = (Ch_Color)sendData;
                         break;
                     }
             }

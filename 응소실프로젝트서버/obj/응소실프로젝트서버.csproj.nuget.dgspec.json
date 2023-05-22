@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\OneDrive\\바탕 화면\\BestSoft\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj": {}
+    "C:\\Users\\ksksy\\Desktop\\응소실 테스트\\1\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\OneDrive\\바탕 화면\\BestSoft\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj": {
+    "C:\\Users\\ksksy\\Desktop\\응소실 테스트\\1\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\OneDrive\\바탕 화면\\BestSoft\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj",
+        "projectUniqueName": "C:\\Users\\ksksy\\Desktop\\응소실 테스트\\1\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj",
         "projectName": "응소실프로젝트서버",
-        "projectPath": "C:\\Users\\user\\OneDrive\\바탕 화면\\BestSoft\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\OneDrive\\바탕 화면\\BestSoft\\BestSoft\\응소실프로젝트서버\\obj\\",
+        "projectPath": "C:\\Users\\ksksy\\Desktop\\응소실 테스트\\1\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj",
+        "packagesPath": "C:\\Users\\ksksy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ksksy\\Desktop\\응소실 테스트\\1\\BestSoft\\응소실프로젝트서버\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ksksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
