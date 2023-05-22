@@ -67,8 +67,13 @@ namespace 로그인화면
                     wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(
                         By.XPath("/html/body/header/div[1]/div/div[2]/a[1]")));
 
-                    // Click main menu button
-                    driver.FindElement(By.XPath("/html/body/header/div[1]/div/div[1]/button")).Click();
+                    try
+                    {
+                        // Click main menu button
+                        driver.FindElement(By.XPath("/html/body/header/div[1]/div/div[1]/button")).Click();
+
+                    }
+                    catch { }
 
                     // Wait main menu
                     WebDriverWait wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
