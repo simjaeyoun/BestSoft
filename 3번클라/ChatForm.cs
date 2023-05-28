@@ -14,21 +14,23 @@ namespace 로그인화면
     {
         // 실수로 챗 폼을 x누르면 사고나니 챗폼에 대해서는 위에 그것을 없애는 방법을 알려달라고 하자
 
-        private In_Game in_game;
-        public ChatForm(In_Game in_game)
+       // private In_Game in_game;
+        public ChatForm()
         {
             InitializeComponent();
 
-            this.in_game = in_game;
+            //this.in_game = in_game;
             //ChatInput.Focus();  
 
         }
 
         StudentData studentData;
 
-        private BubbleChat sendBubbleChat = new BubbleChat { chat = "" };
+        private BubbleChat sendBubbleChat = new BubbleChat { chat = "" , HasBeenUpdated = false };
         // 메세지를 hashset 형태로 저장해서 중복검사해서 log 에 추가
-        private HashSet<string> existingMessages = new HashSet<string>();
+        private HashSet<string> Other_existingMessages = new HashSet<string>();
+        private HashSet<string> My_existingMessages = new HashSet<string>();
+
         private void ChatInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -39,15 +41,24 @@ namespace 로그인화면
                 if (!string.IsNullOrEmpty(message))
                 {
 
-                    sendBubbleChat.chat = message;
-
+                    string name = "kimsangyun";
+                    string timestamp = DateTime.Now.ToShortTimeString();
+                    string fullMessage = $"{timestamp + " " + name}: {message}";
+                    sendBubbleChat.chat = fullMessage;
+                    sendBubbleChat.HasBeenUpdated = true;
                     // 전체 채팅 로그에 메시지 추가
                     // server 를 기준으로 chat 추가 해야할 듯??0
-                    in_game.Create_My_Bubble(message);
+
+                   // in_game.Create_My_Bubble(message);
+                    //if (My_existingMessages.Contains(message))
+                    //{
+                    //    return ;
+                    //}
+                    //My_existingMessages.Add(message);   
                     MainClient.SendData(sendBubbleChat, PacketType.AboutChat, "127.0.0.2");
                     // student 이름 추가
-                    string name = "kimsangyun";
-                    ChatLog.AppendText($"{DateTime.Now.ToShortTimeString() + " " + name}: {message}\r\n");
+                    
+                    //ChatLog.AppendText($"{DateTime.Now.ToShortTimeString() + " " + name}: {message}\r\n");
 
                     // 버블 만드는 것을 잠시 위로 올려본다
                     //in_game.Create_My_Bubble(message);
@@ -89,11 +100,11 @@ namespace 로그인화면
             string timestamp = DateTime.Now.ToShortTimeString();
             string fullMessage = $"{timestamp + " " + name}: {other_chat_log}";
 
-            if (existingMessages.Contains(fullMessage))
+            if (Other_existingMessages.Contains(fullMessage))
             {
                 return false;
             }
-            existingMessages.Add(fullMessage);
+            Other_existingMessages.Add(fullMessage);
 
             ChatLog.AppendText(fullMessage + "\r\n");
             //ChatLog.AppendText($"{DateTime.Now.ToShortTimeString() + " " + name}: {other_chat_log}\r\n");

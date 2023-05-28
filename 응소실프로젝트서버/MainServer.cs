@@ -19,11 +19,13 @@ namespace 응소실프로젝트서버
         ClientManager? clientManager = null;
         ConcurrentBag<string>? AccessLog = null;
         Thread? ConectCheckHost = null;
-           
+        ConcurrentBag<string>? MessageLog = null;
+
         public MainServer()
         {
             clientManager = new ClientManager();
             AccessLog = new ConcurrentBag<string>();
+            MessageLog = new ConcurrentBag<string>();
             clientManager.ConstructHandler += AlarmAllClient;
             clientManager.LocationParsingAction += LocationParsing;
             clientManager.RemoveHandler += RemoveClient;
@@ -71,11 +73,15 @@ namespace 응소실프로젝트서버
         // 접속이나, 접속해제할때 서버에 메시지 뜨게 함
         private void ClientAcess(string message)
         {
-            AccessLog.Add(message);  
+            AccessLog.Add(message);
         }
-        private async void LocationParsing(Location location,string sender)
+        private void Append_Message_Log(string message)
         {
-            await Task.Run(()=>SendData(location, PacketType.AboutLocation, sender));
+            MessageLog.Add(message);
+        }
+        private async void LocationParsing(Location location, string sender)
+        {
+            await Task.Run(() => SendData(location, PacketType.AboutLocation, sender));
         }
         private async void Move_KeyParsing(Move_Key key, string sender)
         {
@@ -88,6 +94,10 @@ namespace 응소실프로젝트서버
         //BubbleChat Parsing 
         private async void BubbleChatParsing(BubbleChat chat, string sender)
         {
+            string messagelog = string.Format("[{0}] {1} {2}", DateTime.Now.ToString("HH:mm:ss"), sender, chat.chat);
+            Append_Message_Log(messagelog);
+            chat.chat = messagelog;
+
             await Task.Run(() => SendData(chat, PacketType.AboutChat, sender));
             Console.WriteLine(chat.chat);
         }
@@ -106,7 +116,7 @@ namespace 응소실프로젝트서버
             //클라이언트 자료구조에서 없어지는 거 제외하기
 
         }
-        private async void AlarmAllClient(StudentData studentData,string sender)
+        private async void AlarmAllClient(StudentData studentData, string sender)
         {
 
             string accessLog = string.Format("[{0}] {1} Access Server", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), studentData.StudentName);
@@ -117,12 +127,13 @@ namespace 응소실프로젝트서버
 
 
             //connect된 cli한테 모든 cli 데이터 보내기
-            foreach(var item in  ClientManager.clientDic.Keys)
+            foreach (var item in ClientManager.clientDic.Keys)
             {
                 if (item == sender)
                     continue;
 
-                Packet<StudentData> packet = new Packet<StudentData> { 
+                Packet<StudentData> packet = new Packet<StudentData>
+                {
                     packet = ClientManager.clientDic[item].StudentData,
                     modifierID = item,
                     packetType = PacketType.AboutConnect
@@ -131,7 +142,7 @@ namespace 응소실프로젝트서버
                 byte[] sendBytes = Encoding.UTF8.GetBytes(json);
                 ClientManager.clientDic[sender].tcpClient.GetStream().Write(sendBytes, 0, sendBytes.Length);
                 //here
-                
+
             }
 
 
@@ -198,13 +209,12 @@ namespace 응소실프로젝트서버
             {
                 try
                 {
-                    if (i == modifierID)
+                    if (i == modifierID && packetType == PacketType.AboutConnect)
                     {
                         continue;
-                    }
-                    //즉각 반영 안되면 thread로 만들어서 돌리기
+                    }//즉각 반영 안되면 thread로 만들어서 돌리기
                     ClientManager.clientDic[i].tcpClient.GetStream().Write(sendBytes, 0, sendBytes.Length);
-                   
+
                 }
                 catch (Exception e)
                 {
@@ -213,7 +223,7 @@ namespace 응소실프로젝트서버
                 }
             }
         }
-        
+
         public void view()
         {
             while (true)
@@ -231,8 +241,13 @@ namespace 응소실프로젝트서버
                         Console.WriteLine(AccessLog.Count);
                         Console.WriteLine(item);
                     }
+                    foreach (var item in MessageLog)
+                    {
+                        Console.WriteLine(MessageLog.Count);
+                        Console.WriteLine(item);
+                    }
 
-                    foreach ( var item in ClientManager.clientDic.Keys)
+                    foreach (var item in ClientManager.clientDic.Keys)
                     {
                         Console.WriteLine(item);
                     }

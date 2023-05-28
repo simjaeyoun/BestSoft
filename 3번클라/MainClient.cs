@@ -49,6 +49,9 @@ namespace 로그인화면
     class BubbleChat
     {
         public string chat { get; set; }
+
+        // hasbeenupdated
+        public bool HasBeenUpdated { get; set; }
     }
     class StudentData
     {
@@ -202,7 +205,8 @@ namespace 로그인화면
                             if (bubbleChat != null)
                             {
                                 StudentManager.StudentDic[Receivedpacket.modifierID].bubblechat = bubbleChat;
-                                
+                                ChatForm.ChatLog.AppendText(bubbleChat.chat + "\r\n");
+
                                 //MessageBox.Show(StudentManager.StudentDic[Receivedpacket.modifierID].bubblechat.chat);
                             }
 

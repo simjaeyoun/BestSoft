@@ -65,7 +65,7 @@ namespace 로그인화면
             color();      /* Color 선택 폼 불러오기 */
             LoadImages(); /* image file 불러오기 */
             timer1.Enabled = true;
-            chatForm = new ChatForm(this);
+            chatForm = new ChatForm();
            
             //chatForm.ChatLog_Show();
             chatForm.Hide();
@@ -100,7 +100,9 @@ namespace 로그인화면
             Collision_Detection_Right();
 
             My_Move();
-            
+
+            Create_My_Bubble();
+
             Other_Move();
             //추가
             Create_Other_Bubble();
@@ -291,12 +293,34 @@ namespace 로그인화면
                 chatForm.Hide();
             }
         }
-        public void Create_My_Bubble(string inputchat)
+        public void Create_My_Bubble()
         {
-            //bubbleChat.chat = inputchat;
-            ChatBubble.Visible = true;
-            ChatBubble.Location = new Point(Me.location.X, Me.location.Y + Me.Height - 100);
-            ChatBubble.Image = CreateTextImage(inputchat);
+            if (StudentManager.StudentDic.TryGetValue("127.0.0.2", out StudentData))
+            {
+                if (StudentData.bubblechat == null || !StudentData.bubblechat.HasBeenUpdated)
+                {
+
+                    return;
+                }
+                try
+                {
+
+                    string My_input_chat = StudentData.bubblechat.chat;
+                    ChatBubble.Visible = true;
+                    ChatBubble.Location = new Point(Me.location.X, Me.location.Y + Me.Height - 100);
+                    ChatBubble.Image = CreateTextImage(My_input_chat);
+
+                    StudentData.bubblechat.HasBeenUpdated = false;          
+
+                }
+                catch (Exception ex) { MessageBox.Show("오류 시발 3번 " + ex.Message); return; }
+
+            }
+            // 여기서 부터는 예전 것
+                //bubbleChat.chat = inputchat;
+            //ChatBubble.Visible = true;
+            //ChatBubble.Location = new Point(Me.location.X, Me.location.Y + Me.Height - 100);
+            //ChatBubble.Image = CreateTextImage(inputchat);
             //MainClient.SendData(bubbleChat,PacketType.AboutChat, "127.0.0.1");
 
         }
@@ -304,12 +328,15 @@ namespace 로그인화면
         {
             if (StudentManager.StudentDic.TryGetValue("127.0.0.1", out StudentData) && lock1 == false)
             {
-                if(StudentData.bubblechat == null)
+
+                if(StudentData.bubblechat == null || !StudentData.bubblechat.HasBeenUpdated)
                 {
+                    
                     return;
                 }
                 try
                 {
+                    // 비어져있지만 update 되지 않았을 경우에 처리가 안돼
                     string other_input_chat = StudentData.bubblechat.chat;
                     // 일단 안에 넣어보았다.
 
@@ -318,14 +345,21 @@ namespace 로그인화면
 
 
                     //chatForm.ChatLog_Show(other_name, other_input_chat);
-                    if (chatForm.ChatLog_Show(other_input_chat))
-                    {
-                        OtherBubble.Visible = true;
-                        OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
-                        OtherBubble.Image = CreateTextImage(other_input_chat);
-                    }
+                    //if (chatForm.ChatLog_Show(other_input_chat))
+                    //{
+                    //    OtherBubble.Visible = true;
+                    //    OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
+                    //    OtherBubble.Image = CreateTextImage(other_input_chat);
+
+                    //    StudentData.bubblechat.HasBeenUpdated = false;
+                    //}
+                    OtherBubble.Visible = true;
+                    OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
+                    OtherBubble.Image = CreateTextImage(other_input_chat);
+
+                    StudentData.bubblechat.HasBeenUpdated = false;
                 }
-                catch(Exception ex) { MessageBox.Show("오류 시발 3번 " + ex.Message ); return; }
+                catch (Exception ex) { MessageBox.Show("오류 시발 3번 " + ex.Message ); return; }
             }
             //OtherBubble.Visible = true;
             //OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);

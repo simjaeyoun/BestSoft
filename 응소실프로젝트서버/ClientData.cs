@@ -48,6 +48,9 @@ namespace 응소실프로젝트서버
     class BubbleChat
     {
         public string chat { get; set; }
+
+        public bool HasBeenUpdated { get; set; }
+
     }
     // 
     class StudentData
@@ -63,7 +66,6 @@ namespace 응소실프로젝트서버
 
         // 챗 구현
         public BubbleChat bubblechat { get; set; }
-
 
 
 

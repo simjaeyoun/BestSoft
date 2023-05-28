@@ -64,7 +64,7 @@ namespace 로그인화면
             color();      /* Color 선택 폼 불러오기 */
             LoadImages(); /* image file 불러오기 */
             timer1.Enabled = true;
-            chatForm = new ChatForm(this);
+            chatForm = new ChatForm();
             //chatForm.ChatLog_Show();
             chatForm.Hide();
 
@@ -98,7 +98,9 @@ namespace 로그인화면
             Collision_Detection_Left();
             Collision_Detection_Right();
             My_Move();
-                      
+
+            Create_My_Bubble();
+
             Other_Move();
             // 추가  
             Create_Other_Bubble();
@@ -291,12 +293,33 @@ namespace 로그인화면
                 chatForm.Hide();
             }
         }
-        public void Create_My_Bubble(string inputchat)
+        public void Create_My_Bubble()
         {
+            if (StudentManager.StudentDic.TryGetValue("127.0.0.1", out StudentData))
+            {
+                if (StudentData.bubblechat == null || !StudentData.bubblechat.HasBeenUpdated)
+                {
+
+                    return;
+                }
+                try
+                {
+
+                    string My_input_chat = StudentData.bubblechat.chat;
+                    ChatBubble.Visible = true;
+                    ChatBubble.Location = new Point(Me.location.X, Me.location.Y + Me.Height - 100);
+                    ChatBubble.Image = CreateTextImage(My_input_chat);
+
+                    StudentData.bubblechat.HasBeenUpdated = false;
+
+                }
+                catch (Exception ex) { MessageBox.Show("오류 시발 1번 " + ex.Message); return; }
+
+            }
             //bubbleChat.chat = inputchat;
-            ChatBubble.Visible = true;
-            ChatBubble.Location = new Point(Me.location.X, Me.location.Y + Me.Height - 100);
-            ChatBubble.Image = CreateTextImage(inputchat);
+            //ChatBubble.Visible = true;
+            //ChatBubble.Location = new Point(Me.location.X, Me.location.Y + Me.Height - 100);
+            //ChatBubble.Image = CreateTextImage(inputchat);
             //MainClient.SendData(bubbleChat,PacketType.AboutChat, "127.0.0.1");
 
         }
@@ -315,8 +338,9 @@ namespace 로그인화면
             //ChatBubble.Image = CreateTextImage(other_input_chat);
             if (StudentManager.StudentDic.TryGetValue("127.0.0.2", out StudentData) && lock1 == false)
             {
-                if(StudentData.bubblechat== null)
+                if (StudentData.bubblechat == null || !StudentData.bubblechat.HasBeenUpdated)
                 {
+
                     return;
                 }
                 try
@@ -328,12 +352,19 @@ namespace 로그인화면
                     //OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
 
                     //chatForm.ChatLog_Show(other_name, other_input_chat);
-                    if (chatForm.ChatLog_Show(other_input_chat))
-                    {
-                        OtherBubble.Visible = true;
-                        OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
-                        OtherBubble.Image = CreateTextImage(other_input_chat);
-                    }
+                    //if (chatForm.ChatLog_Show(other_input_chat))
+                    //{
+                    //    OtherBubble.Visible = true;
+                    //    OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
+                    //    OtherBubble.Image = CreateTextImage(other_input_chat);
+
+                    //    StudentData.bubblechat.HasBeenUpdated = false;
+                    //}
+                    OtherBubble.Visible = true;
+                    OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
+                    OtherBubble.Image = CreateTextImage(other_input_chat);
+
+                    StudentData.bubblechat.HasBeenUpdated = false;
                 }
                 catch(Exception ex) { MessageBox.Show("오류 시발 1번" + ex.Message); return; }
 
