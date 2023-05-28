@@ -30,6 +30,9 @@ namespace 응소실프로젝트서버
             clientManager.Move_KeyParsingAction += Move_KeyParsing;
             clientManager.CharacterAction += CharcterParsing;
 
+            // 챗 Atction
+            clientManager.BubbleChatAction += BubbleChatParsing;
+
             Task serverStart = Task.Run(() =>
             {
                 Serverlisten();
@@ -82,6 +85,14 @@ namespace 응소실프로젝트서버
         {
             await Task.Run(() => SendData(clr, PacketType.AboutCharacter, sender));
         }
+        //BubbleChat Parsing 
+        private async void BubbleChatParsing(BubbleChat chat, string sender)
+        {
+            await Task.Run(() => SendData(chat, PacketType.AboutChat, sender));
+            Console.WriteLine(chat.chat);
+        }
+
+        //
         private async void RemoveClient(ClientData clientData)
         {
             ClientData result = null;
@@ -165,6 +176,12 @@ namespace 응소실프로젝트서버
                 case PacketType.AboutCharacter:
                     {
                         sendedData = (Ch_Color)sendData;
+                        break;
+                    }
+                // 챗 packettype 구현
+                case PacketType.AboutChat:
+                    {
+                        sendedData = sendData as BubbleChat;
                         break;
                     }
             }

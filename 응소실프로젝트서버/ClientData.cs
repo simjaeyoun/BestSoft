@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace 응소실프로젝트서버
 {
-   public enum Ch_Color
+    public enum Ch_Color
     {
         Black,
         Orange,
@@ -22,6 +22,8 @@ namespace 응소실프로젝트서버
         public const int AboutServerCheck = 4;
         public const int AboutKey = 5;
         public const int AboutCharacter = 6;
+        // chat packet 
+        public const int AboutChat = 7;
     }
     class Packet<T>
     {
@@ -30,7 +32,7 @@ namespace 응소실프로젝트서버
         public string modifierID { get; set; }
     }
 
-    class Location 
+    class Location
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -42,7 +44,13 @@ namespace 응소실프로젝트서버
         public bool Go_Left { get; set; }
         public bool Go_Right { get; set; }
     }
-    class StudentData 
+    // 여기 구현
+    class BubbleChat
+    {
+        public string chat { get; set; }
+    }
+    // 
+    class StudentData
     {
         public string StudentName { get; set; }
         public int StudentNum { get; set; }
@@ -50,15 +58,21 @@ namespace 응소실프로젝트서버
         public string StudentMajor { get; set; }
         public string StudentCategory { get; set; }
         public Ch_Color clr { get; set; }
-        public Location Location {get; set; }
+        public Location Location { get; set; }
         public Move_Key key { get; set; }
+
+        // 챗 구현
+        public BubbleChat bubblechat { get; set; }
+
+
+
 
     }
     class ClientData
     {
         public TcpClient tcpClient { get; set; }
         public Byte[] readBuffer { get; set; }
-        
+
         public string clientID { get; set; }
 
         public StudentData StudentData { get; set; }
@@ -69,7 +83,7 @@ namespace 응소실프로젝트서버
 
             this.tcpClient = tcpClient;
 
-           
+
             this.clientID = tcpClient.Client.LocalEndPoint.ToString().Split(":")[0];
 
             /*

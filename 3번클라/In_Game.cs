@@ -52,13 +52,27 @@ namespace 로그인화면
 
         public static Ch_Color clr;
         public static Image[,] images = new Image[3, 12]; /* images[clr][direction] -> Player의 [색깔][방향] 이미지 2차원 배열 */
+        /// <summary>
+        /// cnrk
+        /// </summary>
+        /// 
+        
 
+        private ChatForm chatForm;
         public In_Game()
         {
             InitializeComponent();
             color();      /* Color 선택 폼 불러오기 */
             LoadImages(); /* image file 불러오기 */
             timer1.Enabled = true;
+            chatForm = new ChatForm(this);
+           
+            //chatForm.ChatLog_Show();
+            chatForm.Hide();
+
+            // 자신의 Label visible true 
+            //MyLabel.Location = new Point(Me.location.X, Me.location.Y + Me.Height + 50);
+            //MyLabel.Visible = true;
         }
 
         private void color()
@@ -86,8 +100,10 @@ namespace 로그인화면
             Collision_Detection_Right();
 
             My_Move();
-
+            
             Other_Move();
+            //추가
+            Create_Other_Bubble();
 
             this.Invalidate();
         }
@@ -126,6 +142,9 @@ namespace 로그인화면
                         Other_player = new Player(StudentData.clr, StudentData.Location.X, StudentData.Location.Y);
                         lock1 = false;
                     }
+
+                    // Label 보이게 하기 
+                    OtherLabel.Visible = true;
                 }
             }
             if (StudentManager.StudentDic.TryGetValue("127.0.0.3", out StudentData StudentData_2) && lock2)
@@ -168,6 +187,8 @@ namespace 로그인화면
                 Me.Block_Down = true;
                 Me.Block_Left = true;
                 Me.Block_Right = true;
+                
+                
             }
             else if (Me.Go_Down && Me.Block_Down && (Me.location.Y + Me.Height < this.ClientSize.Height))
             {
@@ -193,6 +214,10 @@ namespace 로그인화면
                 Me.Block_Down = true;
                 Me.Block_Left = true;
             }
+            // 추가 location
+            MyLabel.Location = new Point(Me.location.X, Me.location.Y + 50);
+            MyLabel.Visible = true;
+
         }
         private void Other_Move()
         {
@@ -202,21 +227,28 @@ namespace 로그인화면
                 {
                     Other_player.location.Y -= MoveStep;
                     oth_AnimatePlayer(0, 2);
+                    OtherBubble.Visible = false;
                 }
                 else if (StudentData.Key.Go_Down && (Other_player.location.Y + Other_player.Height < this.ClientSize.Height))
                 {
                     Other_player.location.Y += MoveStep;
                     oth_AnimatePlayer(3, 5);
+                    OtherBubble.Visible = false;
+
                 }
                 else if (StudentData.Key.Go_Left && Other_player.location.X > 0)
                 {
                     Other_player.location.X -= MoveStep;
                     oth_AnimatePlayer(6, 8);
+                    OtherBubble.Visible = false;
+
                 }
                 else if (StudentData.Key.Go_Right && (Other_player.location.X + Other_player.Width < this.ClientSize.Width))
                 {
                     Other_player.location.X += MoveStep;
                     oth_AnimatePlayer(9, 11);
+                    OtherBubble.Visible = false;
+
                 }
                 else if (StudentData.Key.Go_Up == false && StudentData.Key.Go_Down == false && StudentData.Key.Go_Left == false && StudentData.Key.Go_Right == false)
                 {
@@ -226,14 +258,18 @@ namespace 로그인화면
                         Other_player.location.Y = StudentData.Location.Y;
                     }
                 }
+               
+                // 추가 
+                OtherLabel.Location = new Point(Other_player.location.X, Other_player.location.Y +50);
+                OtherLabel.Visible = true;
             }
         }
         private void In_Game_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up) { Me.Go_Up = true; key.Go_Up = true; key.Go_Down = false; key.Go_Left = false; key.Go_Right = false; SendKeyDown(); }
-            else if (e.KeyCode == Keys.Down) { Me.Go_Down = true; key.Go_Up = false; key.Go_Down = true; key.Go_Left = false; key.Go_Right = false; SendKeyDown(); }
-            else if (e.KeyCode == Keys.Left) { Me.Go_Left = true; key.Go_Up = false; key.Go_Down = false; key.Go_Left = true; key.Go_Right = false; SendKeyDown(); }
-            else if (e.KeyCode == Keys.Right) { Me.Go_Right = true; key.Go_Up = false; key.Go_Down = false; key.Go_Left = false; key.Go_Right = true; SendKeyDown(); }
+            if (e.KeyCode == Keys.Up) { Me.Go_Up = true; key.Go_Up = true; key.Go_Down = false; key.Go_Left = false; key.Go_Right = false; ChatBubble.Hide(); SendKeyDown(); }
+            else if (e.KeyCode == Keys.Down) { Me.Go_Down = true; key.Go_Up = false; key.Go_Down = true; key.Go_Left = false; key.Go_Right = false; ChatBubble.Hide(); SendKeyDown(); }
+            else if (e.KeyCode == Keys.Left) { Me.Go_Left = true; key.Go_Up = false; key.Go_Down = false; key.Go_Left = true; key.Go_Right = false; ChatBubble.Hide(); SendKeyDown(); }
+            else if (e.KeyCode == Keys.Right) { Me.Go_Right = true; key.Go_Up = false; key.Go_Down = false; key.Go_Left = false; key.Go_Right = true; ChatBubble.Hide(); SendKeyDown(); }
             else if ((e.KeyCode == Keys.Space) && Space_Up || Space_Down || Space_Left || Space_Right)
             {
                 Me.Go_Up = false; Me.Go_Down = false; Me.Go_Left = false; Me.Go_Right = false;
@@ -246,8 +282,85 @@ namespace 로그인화면
                 }
                 else { MessageBox.Show(Ob_Name); }
             }
+            else if (e.KeyCode == Keys.Tab)
+            {
+                chatForm.Show();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                chatForm.Hide();
+            }
         }
+        public void Create_My_Bubble(string inputchat)
+        {
+            //bubbleChat.chat = inputchat;
+            ChatBubble.Visible = true;
+            ChatBubble.Location = new Point(Me.location.X, Me.location.Y + Me.Height - 100);
+            ChatBubble.Image = CreateTextImage(inputchat);
+            //MainClient.SendData(bubbleChat,PacketType.AboutChat, "127.0.0.1");
 
+        }
+        public void Create_Other_Bubble()
+        {
+            if (StudentManager.StudentDic.TryGetValue("127.0.0.1", out StudentData) && lock1 == false)
+            {
+                if(StudentData.bubblechat == null)
+                {
+                    return;
+                }
+                try
+                {
+                    string other_input_chat = StudentData.bubblechat.chat;
+                    // 일단 안에 넣어보았다.
+
+                    //OtherBubble.Visible = true;
+                    //OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
+
+
+                    //chatForm.ChatLog_Show(other_name, other_input_chat);
+                    if (chatForm.ChatLog_Show(other_input_chat))
+                    {
+                        OtherBubble.Visible = true;
+                        OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
+                        OtherBubble.Image = CreateTextImage(other_input_chat);
+                    }
+                }
+                catch(Exception ex) { MessageBox.Show("오류 시발 3번 " + ex.Message ); return; }
+            }
+            //OtherBubble.Visible = true;
+            //OtherBubble.Location = new Point(Other_player.location.X, Other_player.location.Y + Other_player.Height - 100);
+            //ChatBubble.Image = CreateTextImage(other_input_chat);
+        }
+        private Image CreateTextImage(string text)
+        {
+            // 원본 이미지를 복사합니다.
+            //Image bubbleImage = (Image)Properties.Resources.bubble.Clone();
+            // 캔버스 생성
+            Bitmap bitmap = new Bitmap(ChatBubble.Width, ChatBubble.Height);
+            Graphics graphics = Graphics.FromImage(bitmap);
+            graphics.Clear(Color.Transparent);
+
+            // 원본 이미지를 캔버스에 그립니다.
+            graphics.DrawImage(bitmap, 0, 0, ChatBubble.Width, ChatBubble.Height);
+
+            // 텍스트 출력 설정
+            Font font = new Font("Arial", 12);
+            SolidBrush brush = new SolidBrush(Color.Black);
+            StringFormat stringFormat = new StringFormat
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            // 텍스트를 이미지로 그리기
+            graphics.DrawString(text, font, brush, new RectangleF(0, 0, ChatBubble.Width, ChatBubble.Height), stringFormat);
+
+            // 리소스 정리
+            brush.Dispose();
+            graphics.Dispose();
+
+            return bitmap;
+        }
         private void SendKeyDown()
         {
             if (keydown_lock == false)

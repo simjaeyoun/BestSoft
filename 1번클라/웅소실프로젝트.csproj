@@ -81,6 +81,12 @@
     <Compile Include="bookshelf_pw.designer.cs">
       <DependentUpon>bookshelf_pw.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatForm.designer.cs">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Color_Select.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="bookshelf_pw.resx">
       <DependentUpon>bookshelf_pw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatForm.resx">
+      <DependentUpon>ChatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Color_Select.resx">
       <DependentUpon>Color_Select.cs</DependentUpon>

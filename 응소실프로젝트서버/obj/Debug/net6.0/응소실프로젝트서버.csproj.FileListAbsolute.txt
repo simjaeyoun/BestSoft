@@ -49,3 +49,20 @@ C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서�
 C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
 C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
 C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\ref\응소실프로젝트서버.dll
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.AssemblyReference.cache
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfoInputs.cache
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfo.cs
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.CoreCompileInputs.cache
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\refint\응소실프로젝트서버.dll
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.exe
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.deps.json
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.runtimeconfig.json
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
+C:\Users\KDH\Desktop\3-1\c#\ChatChat\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\ref\응소실프로젝트서버.dll

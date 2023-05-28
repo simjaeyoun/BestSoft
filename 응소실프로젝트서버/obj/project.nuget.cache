@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mQDFkZtAQBXhA6wRU8GcKXtAroF0C9geJRTC2L4B9qGZoqR/pQpEu2Ni/ExYgOKk/Ct73WFXa8hCT5GLg4E1gw==",
+  "dgSpecHash": "iBZaDB0Z6GE0kiBWOfzjgSr9fiFh80WlYBfYs9IcOx0hHSHUfaSCiijZkpLN/VQXiojd1U4+q2ejqaI+sFdi0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ksksy\\Desktop\\응소실 테스트\\1\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj",
+  "projectFilePath": "C:\\Users\\KDH\\Desktop\\3-1\\c#\\ChatChat\\BestSoft\\응소실프로젝트서버\\응소실프로젝트서버.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ksksy\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\KDH\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

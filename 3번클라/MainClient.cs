@@ -22,6 +22,8 @@ namespace 로그인화면
         public const int AboutServerCheck = 4;
         public const int AboutKey = 5;
         public const int AboutCharacter = 6;
+        // chat 구현
+        public const int AboutChat = 7;
     }
     class Packet<T>
     {
@@ -43,6 +45,11 @@ namespace 로그인화면
         public bool Go_Left { get; set; }
         public bool Go_Right { get; set; }
     }
+    // Chat 추가 
+    class BubbleChat
+    {
+        public string chat { get; set; }
+    }
     class StudentData
     {
         public string StudentName { get; set; }
@@ -50,9 +57,11 @@ namespace 로그인화면
         public string StudentState { get; set; }
         public string StudentMajor { get; set; }
         public string StudentCategory { get; set; }
-        public Ch_Color clr { get; set; }   
+        public Ch_Color clr { get; set; }
         public Location Location { get; set; }
         public Move_Key Key { get; set; }
+        //Chat 추가
+        public BubbleChat bubblechat { get; set; }
     }
 
     class MainClient
@@ -61,7 +70,8 @@ namespace 로그인화면
         public static TcpClient client = null;
         //mainclient호출하면서 연결 및 dic에 add하기
 
-        public MainClient() {
+        public MainClient()
+        {
 
             ReadMeassageThread = new Thread(ReadMessage);
             /*
@@ -78,7 +88,7 @@ namespace 로그인화면
 
                 foreach (var item in StudentManager.StudentDic.Keys)
                     MessageBox.Show(item);
-                
+
             }
         }
 
@@ -92,62 +102,62 @@ namespace 로그인화면
             //클라이언트 비동기로도 해보고 비교해보기
             client.Connect(add, 9999);
 
-            
+
             Packet<object> packet = new Packet<object>
-            { 
-                packet = StudentManager.StudentDic[add], 
-                modifierID =add, 
-                packetType = PacketType.AboutConnect 
+            {
+                packet = StudentManager.StudentDic[add],
+                modifierID = add,
+                packetType = PacketType.AboutConnect
             };
 
             string json = JsonConvert.SerializeObject(packet);
             byte[] bytes = Encoding.UTF8.GetBytes(json);
             client.GetStream().Write(bytes, 0, bytes.Length);
-            
+
 
             ReadMeassageThread.Start();
-            
+
 
         }
         private void ReadMessage()
-        {       
-            while(true)
+        {
+            while (true)
             {
-                    byte[] readBuffer = new byte[1024];
-                    client.GetStream().Read(readBuffer, 0, readBuffer.Length);
+                byte[] readBuffer = new byte[1024];
+                client.GetStream().Read(readBuffer, 0, readBuffer.Length);
 
-                    string receivedJson = Encoding.UTF8.GetString(readBuffer, 0, readBuffer.Length);
+                string receivedJson = Encoding.UTF8.GetString(readBuffer, 0, readBuffer.Length);
 
-                    Packet<object> Receivedpacket = JsonConvert.DeserializeObject<Packet<object>>(receivedJson);
+                Packet<object> Receivedpacket = JsonConvert.DeserializeObject<Packet<object>>(receivedJson);
 
-                    switch (Receivedpacket.packetType)
-                    {
-                        case PacketType.AboutConnect:
+                switch (Receivedpacket.packetType)
+                {
+                    case PacketType.AboutConnect:
+                        {
+                            //client추가
+                            StudentData StudentData = JsonConvert.DeserializeObject<Packet<StudentData>>(receivedJson).packet;
+                            if (StudentData != null)
                             {
-                                //client추가
-                                StudentData StudentData = JsonConvert.DeserializeObject<Packet<StudentData>>(receivedJson).packet;
-                                if (StudentData != null)
-                                {
                                 //MessageBox.Show("connect packet");
 
                                 StudentManager.AddStudent(Receivedpacket.modifierID, StudentData);
-                                }
-
-
-                                break;
                             }
-                        case PacketType.AboutLocation:
+
+
+                            break;
+                        }
+                    case PacketType.AboutLocation:
+                        {
+                            //해당 학생의 위치 옮기기
+                            Location location = JsonConvert.DeserializeObject<Packet<Location>>(receivedJson).packet;
+                            if (location != null)
                             {
-                                //해당 학생의 위치 옮기기
-                                Location location = JsonConvert.DeserializeObject<Packet<Location>>(receivedJson).packet;
-                                if (location != null)
-                                {
                                 //MessageBox.Show("location packet");
 
                                 StudentManager.StudentDic[Receivedpacket.modifierID].Location = location;
-                                }
-                                break;
                             }
+                            break;
+                        }
                     case PacketType.AboutKey:
                         {
                             //이동
@@ -173,33 +183,47 @@ namespace 로그인화면
                             break;
                         }
                     case PacketType.AboutRemove:
-                            {
+                        {
                             MessageBox.Show("remove packet");
 
                             StudentManager.RemoveStudent(Receivedpacket.modifierID);
-                                break;
-                            }
-                        case PacketType.AboutServerCheck:
+                            break;
+                        }
+                    case PacketType.AboutServerCheck:
+                        {
+                            //MessageBox.Show("server packet");
+                            continue;
+
+                        }
+
+                    case PacketType.AboutChat:
+                        {
+                            BubbleChat bubbleChat = JsonConvert.DeserializeObject<Packet<BubbleChat>>(receivedJson).packet;
+                            if (bubbleChat != null)
                             {
-                                //MessageBox.Show("server packet");
-                                continue;
+                                StudentManager.StudentDic[Receivedpacket.modifierID].bubblechat = bubbleChat;
                                 
+                                //MessageBox.Show(StudentManager.StudentDic[Receivedpacket.modifierID].bubblechat.chat);
                             }
-                    }
-                
+
+                            break;
+                        }
+                }
+
+
 
             }
 
-         }
-        public static void SendData(object sendData, int packetType,string modifierID)
+        }
+        public static void SendData(object sendData, int packetType, string modifierID)
         {
-            int SendType=0;
+            int SendType = 0;
             switch (packetType)
             {
                 case PacketType.AboutConnect:
                     SendType = PacketType.AboutConnect;
                     break;
-                case PacketType.AboutLocation: 
+                case PacketType.AboutLocation:
                     SendType = PacketType.AboutLocation;
                     break;
                 case PacketType.AboutRemove:
@@ -211,13 +235,17 @@ namespace 로그인화면
                 case PacketType.AboutCharacter:
                     SendType = PacketType.AboutCharacter;
                     break;
+                // 추가
+                case PacketType.AboutChat:
+                    SendType = PacketType.AboutChat;
+                    break;
 
             }
 
             Packet<object> packet = new Packet<object>
             {
                 packet = sendData,
-                modifierID =modifierID,
+                modifierID = modifierID,
                 packetType = SendType
             };
 
@@ -239,16 +267,16 @@ namespace 로그인화면
     static class StudentManager
     {
         public static ConcurrentDictionary<string, StudentData> StudentDic = new ConcurrentDictionary<string, StudentData>();
-        
-        public static void AddStudent(string Address,StudentData student)
+
+        public static void AddStudent(string Address, StudentData student)
         {
             StudentDic.TryAdd(Address, student);
             //본인이 아니라면 picturebox 추가
         }
         public static void RemoveStudent(string Address)
         {
-            StudentData value=null;
-            StudentDic.TryRemove(Address,out value);
+            StudentData value = null;
+            StudentDic.TryRemove(Address, out value);
             //본인이 아니라면 picturebox 삭제
         }
     }
