@@ -18,7 +18,7 @@ namespace 로그인화면
         protected string Obstacle_Name;
         protected Info_Next Info;
 
-        protected bool lock1 = true, lock2 = true, lock3 = true;
+        public static bool lock1 = true, lock2 = true, lock3 = true;
         protected bool keydown_lock = false;
         protected Move_Key key = new Move_Key { Go_Up = false, Go_Down = false, Go_Left = false, Go_Right = false };
 
@@ -50,7 +50,7 @@ namespace 로그인화면
             this.KeyDown += BaseForm_KeyDown;
             this.KeyUp += BaseForm_KeyUp;
             this.Paint += BaseForm_Paint;
-            this.FormClosed += BaseForm_Closing;
+            //this.FormClosed += BaseForm_Closing;
 
             Info = new Info_Next();
             Info.ObstacleName = null;
@@ -143,8 +143,8 @@ namespace 로그인화면
 
             Check_Next();
 
-            Create_My_Bubble();///
-            Create_Other_Bubble();///
+            //Create_My_Bubble();///
+            //Create_Other_Bubble();///
 
 
             if (Other_player != null)
@@ -480,11 +480,12 @@ namespace 로그인화면
             }
             Other_player.image = images[(int)Other_player.clr, Other_player.steps];
         }
-
+        /*
         protected virtual void BaseForm_Closing(object sender, FormClosedEventArgs e)
         {
+
             timer.Stop();
-        }
+        }*/
         public void Create_Other_Bubble()
         {
             if (StudentManager.StudentDic.TryGetValue("127.0.0.2", out StudentData) && lock1 == false)
@@ -587,16 +588,43 @@ namespace 로그인화면
             return bitmap;
         }
 
-        //protected override void OnFormClosing(FormClosingEventArgs e)
-        //{
-        //    if (e.CloseReason == CloseReason.UserClosing)
-        //        Application.Exit();
 
-        //    else if (e.CloseReason == CloseReason.ApplicationExitCall) { }
+        /*protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
+                
 
-        //    base.OnFormClosing(e);
-        //}
+            else if (e.CloseReason == CloseReason.ApplicationExitCall) { }
 
+            base.OnFormClosing(e);
+        }*/
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+
+            timer.Stop();
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                        
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form != this)
+                    {
+                        form.Close();
+                    }
+                }
+                Application.ExitThread();
+
+                Environment.Exit(0);
+            }
+            else if (e.CloseReason == CloseReason.ApplicationExitCall) { }
+
+        }
 
     }
 }

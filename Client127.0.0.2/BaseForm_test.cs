@@ -17,7 +17,7 @@ namespace 로그인화면
         protected string Obstacle_Name;
         protected Info_Next Info;
 
-        protected bool lock1 = true, lock2 = true, lock3 = true;
+        public static bool lock1 = true, lock2 = true, lock3 = true;
         protected bool keydown_lock = false;
         protected Move_Key key = new Move_Key { Go_Up = false, Go_Down = false, Go_Left = false, Go_Right = false };
 
@@ -142,8 +142,8 @@ namespace 로그인화면
             Check_Next();
 
 
-            Create_My_Bubble();///
-            Create_Other_Bubble();///
+            //Create_My_Bubble();
+            //Create_Other_Bubble();
 
             if (Other_player != null)
             {
@@ -586,17 +586,29 @@ namespace 로그인화면
 
             return bitmap;
         }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
 
-        //protected override void OnFormClosing(FormClosingEventArgs e)
-        //{
-        //    if (e.CloseReason == CloseReason.UserClosing)
-        //        Application.Exit();
+            timer.Stop();
+            base.OnFormClosing(e);
 
-        //    else if (e.CloseReason == CloseReason.ApplicationExitCall) { }
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
 
-        //    base.OnFormClosing(e);
-        //}
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form != this)
+                    {
+                        form.Close();
+                    }
+                }
+                Application.ExitThread();
 
+                Environment.Exit(0);
+            }
+            else if (e.CloseReason == CloseReason.ApplicationExitCall) { }
+
+        }
 
     }
 }

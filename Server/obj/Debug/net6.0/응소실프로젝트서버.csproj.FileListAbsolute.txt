@@ -83,3 +83,20 @@ C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\refint\응소�
 C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.pdb
 C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
 C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\ref\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\bin\Debug\net6.0\응소실프로젝트서버.exe
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\bin\Debug\net6.0\응소실프로젝트서버.deps.json
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\bin\Debug\net6.0\응소실프로젝트서버.runtimeconfig.json
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\bin\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\bin\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\응소실프로젝트서버.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfo.cs
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\refint\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\Alpha_version\BestSoft\Server\obj\Debug\net6.0\ref\응소실프로젝트서버.dll

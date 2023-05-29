@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ChatLog = new System.Windows.Forms.TextBox();
+            ChatLog = new System.Windows.Forms.TextBox();
             this.ChatInput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ChatLog
             // 
-            this.ChatLog.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ChatLog.Location = new System.Drawing.Point(0, 0);
-            this.ChatLog.Multiline = true;
-            this.ChatLog.Name = "ChatLog";
-            this.ChatLog.ReadOnly = true;
-            this.ChatLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ChatLog.Size = new System.Drawing.Size(798, 420);
-            this.ChatLog.TabIndex = 0;
+            ChatLog.Dock = System.Windows.Forms.DockStyle.Top;
+            ChatLog.Location = new System.Drawing.Point(0, 0);
+            ChatLog.Multiline = true;
+            ChatLog.Name = "ChatLog";
+            ChatLog.ReadOnly = true;
+            ChatLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            ChatLog.Size = new System.Drawing.Size(798, 420);
+            ChatLog.TabIndex = 0;
+            ChatLog.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChatInput_KeyDown);
+
             // 
             // ChatInput
             // 
@@ -49,6 +51,8 @@
             this.ChatInput.Name = "ChatInput";
             this.ChatInput.Size = new System.Drawing.Size(796, 25);
             this.ChatInput.TabIndex = 1;
+            this.ChatInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChatInput_KeyDown);
+
             // 
             // ChatForm
             // 
@@ -56,7 +60,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 442);
             this.Controls.Add(this.ChatInput);
-            this.Controls.Add(this.ChatLog);
+            this.Controls.Add(ChatLog);
             this.Name = "ChatForm";
             this.Text = "ChatForm";
             this.ResumeLayout(false);
@@ -65,8 +69,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox ChatLog;
         private System.Windows.Forms.TextBox ChatInput;
+        public static System.Windows.Forms.TextBox ChatLog;
     }
 }

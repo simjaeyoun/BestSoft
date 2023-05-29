@@ -212,9 +212,14 @@ namespace 로그인화면
                             if (bubbleChat != null)
                             {
                                 StudentManager.StudentDic[Receivedpacket.modifierID].bubblechat = bubbleChat;
-                                //ChatForm.ChatLog.AppendText(bubbleChat.chat + "\r\n");
-
-                                //MessageBox.Show(StudentManager.StudentDic[Receivedpacket.modifierID].bubblechat.chat);
+                                if (ChatForm.ChatLog.InvokeRequired)
+                                {
+                                    ChatForm.ChatLog.Invoke(new MethodInvoker(
+                                        delegate ()
+                                        {
+                                            ChatForm.ChatLog.AppendText(bubbleChat.chat + "\r\n");
+                                        }));
+                                }
                             }
 
                             break;
@@ -289,6 +294,8 @@ namespace 로그인화면
         {
             StudentData value = null;
             StudentDic.TryRemove(Address, out value);
+            
+            BaseForm_test.lock1 = true;
             //본인이 아니라면 picturebox 삭제
         }
     }

@@ -66,7 +66,7 @@ namespace 응소실프로젝트서버
             while (true)
             {
                 SendData("<Server Check>", PacketType.AboutServerCheck, "");
-                Thread.Sleep(5000);
+                Thread.Sleep(2000);
             }
 
         }
@@ -196,6 +196,11 @@ namespace 응소실프로젝트서버
                         sendedData = sendData as Info_Next;
                         break;
                     }
+                case PacketType.AboutChat:
+                    {
+                        sendedData = sendData as BubbleChat;
+                        break;
+                    }
             }
 
             if (sendedData != null)
@@ -210,7 +215,7 @@ namespace 응소실프로젝트서버
             {
                 try
                 {
-                    if (i == modifierID && packetType == PacketType.AboutConnect)
+                    if (i == modifierID && (packetType == PacketType.AboutConnect || packetType == PacketType.AboutRemove))
                     {
                         continue;
                     }
@@ -221,6 +226,7 @@ namespace 응소실프로젝트서버
                 catch (Exception e)
                 {
                     //check하는데 cli에게 write가 안되면 없앰
+                    Console.WriteLine("remone");
                     RemoveClient(ClientManager.clientDic[i]);
                 }
             }

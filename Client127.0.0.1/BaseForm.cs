@@ -471,17 +471,15 @@ namespace 로그인화면
         {
             timer.Stop();
         }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+                Application.Exit();
 
-        //protected override void OnFormClosing(FormClosingEventArgs e)
-        //{
-        //    if (e.CloseReason == CloseReason.UserClosing)
-        //        Application.Exit();
+            else if (e.CloseReason == CloseReason.ApplicationExitCall) { }
 
-        //    else if (e.CloseReason == CloseReason.ApplicationExitCall) { }
-
-        //    base.OnFormClosing(e);
-        //}
-
+            base.OnFormClosing(e);
+        }
 
     }
 }

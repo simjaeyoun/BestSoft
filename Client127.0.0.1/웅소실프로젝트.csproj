@@ -146,6 +146,9 @@
     <Compile Include="PS_Second.designer.cs">
       <DependentUpon>PS_Second.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChatForm.resx">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Color_Select.resx">
       <DependentUpon>Color_Select.cs</DependentUpon>
     </EmbeddedResource>
