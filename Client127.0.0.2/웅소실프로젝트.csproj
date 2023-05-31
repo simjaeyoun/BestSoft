@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5193AF24-6D47-404E-B5F0-5326D57C7450}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>로그인화면</RootNamespace>
+    <AssemblyName>로그인화면</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.WebDriver.4.9.0\lib\net47\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.Support.4.9.0\lib\net47\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm_test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatForm.Designer.cs">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Color_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Color_Select.Designer.cs">
+      <DependentUpon>Color_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loader.cs" />
+    <Compile Include="Lobby.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lobby.Designer.cs">
+      <DependentUpon>Lobby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainClient.cs" />
+    <Compile Include="Map_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Map_Select.designer.cs">
+      <DependentUpon>Map_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PS_Final.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PS_Final.Designer.cs">
+      <DependentUpon>PS_Final.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PS_First.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PS_First.designer.cs">
+      <DependentUpon>PS_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PS_hint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PS_hint.Designer.cs">
+      <DependentUpon>PS_hint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PS_paper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PS_paper.designer.cs">
+      <DependentUpon>PS_paper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PS_paperInroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PS_paperInroom.designer.cs">
+      <DependentUpon>PS_paperInroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PS_Second.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PS_Second.designer.cs">
+      <DependentUpon>PS_Second.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChatForm.resx">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Color_Select.resx">
+      <DependentUpon>Color_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lobby.resx">
+      <DependentUpon>Lobby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Map_Select.resx">
+      <DependentUpon>Map_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PS_Final.resx">
+      <DependentUpon>PS_Final.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PS_First.resx">
+      <DependentUpon>PS_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PS_hint.resx">
+      <DependentUpon>PS_hint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PS_paper.resx">
+      <DependentUpon>PS_paper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PS_paperInroom.resx">
+      <DependentUpon>PS_paperInroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PS_Second.resx">
+      <DependentUpon>PS_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="drivers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obstacle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obstacle2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orange_Player_Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orange_Player_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orange_Player_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orange_Player_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player_Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player_Going_Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Right_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Right_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Down_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Down_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Left_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Left_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Up_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_Player_Up_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beaker1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beaker2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beaker3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desk2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beaker4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desk_memo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helicopter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rooftop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteboard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prison.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\match.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PS_room.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PS_Final.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player_E.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player_Q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player_R.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player_W.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bubble.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Selenium.WebDriver.4.9.0\build\Selenium.WebDriver.targets" Condition="Exists('packages\Selenium.WebDriver.4.9.0\build\Selenium.WebDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Selenium.WebDriver.4.9.0\build\Selenium.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.4.9.0\build\Selenium.WebDriver.targets'))" />
+    <Error Condition="!Exists('packages\Selenium.WebDriver.ChromeDriver.112.0.5615.4900\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.ChromeDriver.112.0.5615.4900\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+  <Import Project="packages\Selenium.WebDriver.ChromeDriver.112.0.5615.4900\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('packages\Selenium.WebDriver.ChromeDriver.112.0.5615.4900\build\Selenium.WebDriver.ChromeDriver.targets')" />
+</Project>
