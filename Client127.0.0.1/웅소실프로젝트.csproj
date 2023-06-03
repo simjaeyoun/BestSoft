@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -83,6 +84,12 @@
       <DependentUpon>Color_Select.cs</DependentUpon>
     </Compile>
     <Compile Include="Loader.cs" />
+    <Compile Include="Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lobby.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +108,18 @@
     </Compile>
     <Compile Include="Map_Select.designer.cs">
       <DependentUpon>Map_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherChat.Designer.cs">
+      <DependentUpon>OtherChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyChat.Designer.cs">
+      <DependentUpon>MyChat.cs</DependentUpon>
     </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
@@ -134,20 +153,20 @@
     <Compile Include="PS_paper.designer.cs">
       <DependentUpon>PS_paper.cs</DependentUpon>
     </Compile>
-    <Compile Include="PS_paperInroom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PS_paperInroom.designer.cs">
-      <DependentUpon>PS_paperInroom.cs</DependentUpon>
-    </Compile>
     <Compile Include="PS_Second.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PS_Second.designer.cs">
       <DependentUpon>PS_Second.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChatForm.resx">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Color_Select.resx">
       <DependentUpon>Color_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lobby.resx">
       <DependentUpon>Lobby.cs</DependentUpon>
@@ -157,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Map_Select.resx">
       <DependentUpon>Map_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherChat.resx">
+      <DependentUpon>OtherChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyChat.resx">
+      <DependentUpon>MyChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -174,9 +199,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PS_paper.resx">
       <DependentUpon>PS_paper.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PS_paperInroom.resx">
-      <DependentUpon>PS_paperInroom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PS_Second.resx">
       <DependentUpon>PS_Second.cs</DependentUpon>
@@ -272,9 +294,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\a_Player_Up_3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\start.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\beaker1.png" />
@@ -380,6 +399,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lobby.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerQ_forSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerW_forSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerE_forSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerR_forSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playerE_forSelect...png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Selenium.WebDriver.4.9.0\build\Selenium.WebDriver.targets" Condition="Exists('packages\Selenium.WebDriver.4.9.0\build\Selenium.WebDriver.targets')" />

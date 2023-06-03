@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace 로그인화면
 {
-    public partial class PS_paperInroom : Form
+    public partial class OtherChat : Form
     {
-        public PS_paperInroom()
+        public OtherChat()
         {
             InitializeComponent();
         }

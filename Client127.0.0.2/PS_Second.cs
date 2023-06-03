@@ -29,20 +29,20 @@ namespace 로그인화면
         {
             if (Obstacle_Name == "book" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("평범한 그림책이다.. 123 P까지 있는 것으로 보인다.", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("평범한 그림책이다.. 123 P까지 있는 것으로 보인다.", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "doc" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("의미를 모를 수들이 적혀있다..\n\n1 0 1 1 0 1", 1); pS_Hint.Show(this);
+                pS_Hint = new PS_hint("의미를 모를 수들이 적혀있다..\n\n1 0 1 1 0 1", 1); pS_Hint.Show(this);
             }
             else if (Obstacle_Name == "picture" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("어린 아이가 그린 것만 같은 그림이다.. 1788년도에 그려진 듯 하다.", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("어린 아이가 그린 것만 같은 그림이다.. 1788년도에 그려진 듯 하다.", 1); pS_Hint.Show();
             }
 
             else if (Obstacle_Name == "smallMap" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("", 3); pS_Hint.Show();
+                pS_Hint = new PS_hint("", 3); pS_Hint.Show();
             }
             else if (Obstacle_Name == "smallMap_by_other" && BaseForm_test.Me.Map == this.Map)
             {
@@ -52,7 +52,7 @@ namespace 로그인화면
 
             else if (Obstacle_Name == "barrel1" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("두 명의 아버지와 두 명의 아들이 한 명당 한 마리 씩 물고기를 낚았다. \n\n" +
+                pS_Hint = new PS_hint("두 명의 아버지와 두 명의 아들이 한 명당 한 마리 씩 물고기를 낚았다. \n\n" +
                     "날이 저물어서 집으로 갈 때 잡은 물고기는 몇 마리인가?", 4);
                 pS_Hint.Show();
             }
@@ -68,15 +68,19 @@ namespace 로그인화면
                 BaseForm_test.Me.Info.result = true;
                 MainClient.SendData(BaseForm_test.Me.Info, PacketType.AboutNext, "127.0.0.2");
 
-                PS_Final pS_Final = new PS_Final();
-                pS_Final.Show();
+                Loading loading = new Loading(3);
+                loading.Show();
+                //PS_Final pS_Final = new PS_Final();
+                //pS_Final.Show();
                 this.timer.Stop();
                 this.Hide();
             }
             else if (Obstacle_Name == "rope_by_other" && BaseForm_test.Me.Map == this.Map)
             {
-                PS_Final pS_Final = new PS_Final();
-                pS_Final.Show();
+                Loading loading = new Loading(3);
+                loading.Show();
+                // PS_Final pS_Final = new PS_Final();
+                // pS_Final.Show();
                 this.timer.Stop();
                 this.Hide();
             }

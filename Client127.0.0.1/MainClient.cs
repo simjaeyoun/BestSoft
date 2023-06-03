@@ -10,6 +10,7 @@ using System.Threading;
 using Newtonsoft.Json;
 using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace 로그인화면
 {
@@ -63,6 +64,8 @@ namespace 로그인화면
         public string StudentState { get; set; }
         public string StudentMajor { get; set; }
         public string StudentCategory { get; set; }
+
+        public Image profile { get; set; }
         public Ch_Color clr { get; set; }
         public Location Location { get; set; }
         public Move_Key Key { get; set; }
@@ -223,7 +226,10 @@ namespace 로그인화면
                                 //MessageBox.Show("Character packet");
 
                                 StudentManager.StudentDic[Receivedpacket.modifierID].clr = clr;
-
+                                if (clr == Ch_Color.Black) { StudentManager.StudentDic[Receivedpacket.modifierID].profile = Properties.Resources.playerQ_forSelect; }
+                                else if (clr == Ch_Color.Orange) { StudentManager.StudentDic[Receivedpacket.modifierID].profile = Properties.Resources.playerW_forSelect; }
+                                else if (clr == Ch_Color.Green) { StudentManager.StudentDic[Receivedpacket.modifierID].profile = Properties.Resources.playerE_forSelect; }
+                                else if (clr == Ch_Color.Blue) { StudentManager.StudentDic[Receivedpacket.modifierID].profile = Properties.Resources.playerR_forSelect; }
                                 //if (BaseForm_test.lock1)
                                 //{
                                 //    BaseForm_test.Other_player = new Player(clr, Receivedpacket.modifierID);
@@ -241,7 +247,7 @@ namespace 로그인화면
                                 //MessageBox.Show("Next packet");
 
                                 StudentManager.StudentDic[Receivedpacket.modifierID].Info = Info;
-                                if(BaseForm_test.lock1 == false)
+                                if (BaseForm_test.lock1 == false)
                                 {
                                     if (BaseForm_test.Other_player.address == Receivedpacket.modifierID)
                                     {

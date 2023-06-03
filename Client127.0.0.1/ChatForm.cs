@@ -16,7 +16,7 @@ namespace 로그인화면
         {
             InitializeComponent();
             ChatInput.Focus();
-
+            this.Load += ChatForm_Load;
             //this.KeyDown += ChatInput_KeyDown;
             //this.in_game = in_game;
             //ChatInput.Focus();  
@@ -30,12 +30,12 @@ namespace 로그인화면
         // 메세지를 hashset 형태로 저장해서 중복검사해서 log 에 추가
         //private HashSet<string> Other_existingMessages = new HashSet<string>();
         //private HashSet<string> My_existingMessages = new HashSet<string>();;
-
+        
+        
         private void ChatInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-
                 ChatInput.Focus();
                 string message = ChatInput.Text.Trim();
                 if (!string.IsNullOrEmpty(message))
@@ -43,9 +43,8 @@ namespace 로그인화면
 
                     string name = "LEEgyun";
                     string timestamp = DateTime.Now.ToShortTimeString();
-                    string fullMessage = $"{timestamp + " " + name}: {message}";
                     sendBubbleChat.InputChat = message;
-                    sendBubbleChat.LogChat = fullMessage;
+                    sendBubbleChat.LogChat = timestamp;
                     sendBubbleChat.HasBeenUpdated = true;
                     // 전체 채팅 로그에 메시지 추가
                     // server 를 기준으로 chat 추가 해야할 듯??0
@@ -81,9 +80,38 @@ namespace 로그인화면
                 }
             }
         }
-        public void LogAppend(string Log)
+        
+        public void LogAppend(string Time, int flag)
         {
-            ChatLog.AppendText(Log + "\r\n");
+            if (flag == 1)
+            {
+                MyChat myChat = new MyChat();
+                myChat.TopLevel = false;
+                myChat.message.Text = BaseForm_test.StudentData.bubblechat.InputChat;
+                myChat.time.Text = Time;
+                myChat.Dock = DockStyle.Right;
+                ChatLog.Controls.Add(myChat);
+                myChat.Show();
+            }
+            else
+            {
+                OtherChat otherChat = new OtherChat();
+                otherChat.TopLevel = false;
+                otherChat.name.Text = BaseForm_test.StudentData.StudentName;
+                otherChat.profile.Image = BaseForm_test.StudentData.profile;
+                otherChat.message.Text = BaseForm_test.StudentData.bubblechat.InputChat;
+                otherChat.time.Text = Time;
+                ChatLog.Controls.Add(otherChat);
+                otherChat.Show();
+            }
+            ChatLog.AutoScrollPosition = new Point(0, ChatLog.VerticalScroll.Maximum);
         }
+
+        private void ChatForm_Load(object sender, EventArgs e)
+        {
+            chatProfile.Image = BaseForm_test.My_StudentData.profile;
+            namelbl.Text = BaseForm_test.My_StudentData.StudentName;
+        }
+
     }
 }

@@ -243,3 +243,36 @@ C:\Users\ksksy\Desktop\0529_중간버전\Client127.0.0.2\obj\Debug\웅소실프�
 C:\Users\ksksy\Desktop\0529_중간버전\Client127.0.0.2\obj\Debug\웅소실프로젝트.csproj.CopyComplete
 C:\Users\ksksy\Desktop\0529_중간버전\Client127.0.0.2\obj\Debug\로그인화면.exe
 C:\Users\ksksy\Desktop\0529_중간버전\Client127.0.0.2\obj\Debug\로그인화면.pdb
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\selenium-manager\linux\selenium-manager
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\selenium-manager\macos\selenium-manager
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\로그인화면.exe.config
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\로그인화면.exe
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\로그인화면.pdb
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\Guna.UI2.dll
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\SeleniumExtras.WaitHelpers.dll
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\WebDriver.dll
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\WebDriver.Support.dll
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\웅소실프로젝트.csproj.AssemblyReference.cache
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\웅소실프로젝트.csproj.SuggestedBindingRedirects.cache
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.ChatForm.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.Select_Color.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.Lobby.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.Login.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.Map_Select.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.Properties.Resources.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.PS_Final.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.PS_First.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.PS_hint.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.PS_paper.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.PS_Second.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\웅소실프로젝트.csproj.GenerateResource.cache
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\웅소실프로젝트.csproj.CoreCompileInputs.cache
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\웅소실프로젝트.csproj.CopyComplete
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.exe
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.pdb
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.MyChat.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.OtherChat.resources
+C:\Users\82103\Desktop\alpha3\Client127.0.0.2\obj\Debug\로그인화면.Loading.resources

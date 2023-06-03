@@ -31,20 +31,20 @@ namespace 로그인화면
         {
             if (Obstacle_Name == "box1" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("B C D E I K O X ?", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("B C D E I K O X ?", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "box2" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("16 + 4 = 8  8 + 1 = 9  12 + 15 = 3  7 + 9 = 4\n\n7 + 7 = ?", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("16 + 4 = 8  8 + 1 = 9  12 + 15 = 3  7 + 9 = 4\n\n7 + 7 = ?", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "box3" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("어느 날 3명의 갑판원을 뽑기로 했다. 후보자는 7명이고 선원은 총 45명이다\n\n" +
+                pS_Hint = new PS_hint("어느 날 3명의 갑판원을 뽑기로 했다. 후보자는 7명이고 선원은 총 45명이다\n\n" +
                     "개표 도중, 후보자 중 1명이 확실하게 뽑혔다고 말할 수 있으려면\n\n몇 표가 나와야 하는가?", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "forEscape" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("최종 암호를 입력하세요", 5); pS_Hint.Show();
+                pS_Hint = new PS_hint("최종 암호를 입력하세요", 5); pS_Hint.Show();
             }
             else if (Obstacle_Name == "forEscape_by_other" && BaseForm_test.Me.Map == this.Map)
             {

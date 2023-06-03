@@ -122,7 +122,7 @@ namespace ·Î±×ÀÎÈ­¸é
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("¸¼Àº °íµñ", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(90, 451);
+            this.label3.Location = new System.Drawing.Point(137, 467);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 23);
             this.label3.TabIndex = 5;

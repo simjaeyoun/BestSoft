@@ -21,6 +21,7 @@ namespace 로그인화면
         {
             if (Loader.Selected_Character[0])
             {
+                StudentManager.StudentDic["127.0.0.2"].profile = Properties.Resources.playerQ_forSelect;
                 BaseForm_test.Me = new Player(Ch_Color.Black, "127.0.0.2");
                 MainClient.SendData(Ch_Color.Black, PacketType.AboutCharacter, "127.0.0.2");
                 this.Close();
@@ -32,6 +33,7 @@ namespace 로그인화면
         {
             if (Loader.Selected_Character[1])
             {
+                StudentManager.StudentDic["127.0.0.2"].profile = Properties.Resources.playerW_forSelect;
                 BaseForm_test.Me = new Player(Ch_Color.Orange, "127.0.0.2");
                 MainClient.SendData(Ch_Color.Orange, PacketType.AboutCharacter, "127.0.0.2");
                 this.Close();
@@ -43,6 +45,7 @@ namespace 로그인화면
         {
             if (Loader.Selected_Character[2])
             {
+                StudentManager.StudentDic["127.0.0.2"].profile = Properties.Resources.playerE_forSelect; //playerE_forSelect;
                 BaseForm_test.Me = new Player(Ch_Color.Green, "127.0.0.2");
                 MainClient.SendData(Ch_Color.Green, PacketType.AboutCharacter, "127.0.0.2");
                 this.Close();
@@ -53,6 +56,7 @@ namespace 로그인화면
         {
             if (Loader.Selected_Character[3])
             {
+                StudentManager.StudentDic["127.0.0.2"].profile = Properties.Resources.playerR_forSelect;
                 BaseForm_test.Me = new Player(Ch_Color.Blue, "127.0.0.2");
                 MainClient.SendData(Ch_Color.Blue, PacketType.AboutCharacter, "127.0.0.2");
                 this.Close();

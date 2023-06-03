@@ -102,7 +102,7 @@ namespace 로그인화면
 
             else if (Obstacle_Name == "forRope" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("암호를 입력하세요", 2); pS_Hint.Show();
+                pS_Hint = new PS_hint("암호를 입력하세요", 2); pS_Hint.Show();
             }
             else if (Obstacle_Name == "forRope_by_other" && BaseForm_test.Me.Map == this.Map)
             {
@@ -117,49 +117,53 @@ namespace 로그인화면
                 BaseForm_test.Me.Info.result = true;
                 MainClient.SendData(BaseForm_test.Me.Info, PacketType.AboutNext, "127.0.0.2");
 
-                PS_Second pS_Second = new PS_Second();
-                pS_Second.Show();
+                Loading loading = new Loading(2);
+                loading.Show();
+                //PS_Second pS_Second = new PS_Second();
+                //pS_Second.Show();
                 this.timer.Stop();
                 this.Hide();
             }
             else if (Obstacle_Name == "rope_by_other" && BaseForm_test.Me.Map == this.Map)
             {
-                PS_Second pS_Second = new PS_Second();
-                pS_Second.Show();
+                Loading loading = new Loading(2);
+                loading.Show();
+                //PS_Second pS_Second = new PS_Second();
+                //pS_Second.Show();
                 this.timer.Stop();
                 this.Hide();
             }
             else if (Obstacle_Name == "hint1" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("오후 5시 맞i한 태양을 보아라.. 그러f면 태양이 지고 달t이 나타e날 테니..", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("오후 5시 맞i한 태양을 보아라.. 그러f면 태양이 지고 달t이 나타e날 테니..", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "hint2" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("오후 8시 달을 보니 적적하여 눈물을 흘렸다", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("오후 8시 달을 보니 적적하여 눈물을 흘렸다", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "hint3" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("오전 10시 태양과 함께하는 브런치..", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("오전 10시 태양과 함께하는 브런치..", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "hint4" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("오후 9시 창문에 달e이 보이r니..", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("오후 9시 창문에 달e이 보이r니..", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "hint5" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("오후 7시 맞이n한 달을 보t고", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("오후 7시 맞이n한 달을 보t고", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "hint6" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("오후 1시 태양이 뜨는 날 우리s는 그것h을 맞이 할 것이며..", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("오후 1시 태양이 뜨는 날 우리s는 그것h을 맞이 할 것이며..", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "hint7" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("오후 10시 달에는 눈물이 없다..", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("오후 10시 달에는 눈물이 없다..", 1); pS_Hint.Show();
             }
             else if (Obstacle_Name == "hint8" && (pS_Hint == null || pS_Hint.IsDisposed))
             {
-                PS_hint pS_Hint = new PS_hint("오후 2시 창문에 비친 태양이 우리를 감싼다", 1); pS_Hint.Show();
+                pS_Hint = new PS_hint("오후 2시 창문에 비친 태양이 우리를 감싼다", 1); pS_Hint.Show();
             }
         }
 

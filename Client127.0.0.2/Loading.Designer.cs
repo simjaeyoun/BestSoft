@@ -1,6 +1,6 @@
 ﻿namespace 로그인화면
 {
-    partial class PS_paperInroom
+    partial class Loading
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // PS_paperInroom
+            // Loading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 603);
-            this.Name = "PS_paperInroom";
-            this.Text = "PS_paperInroom";
+            this.BackgroundImage = global::로그인화면.Properties.Resources.loading;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1042, 815);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Loading";
+            this.Text = "Loadingcs";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Loading_FormClosed);
+            this.Load += new System.EventHandler(this.Loading_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timer1;
     }
 }

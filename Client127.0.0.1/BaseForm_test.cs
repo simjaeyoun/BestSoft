@@ -22,8 +22,8 @@ namespace 로그인화면
         protected bool keydown_lock = false;
         protected Move_Key key = new Move_Key { Go_Up = false, Go_Down = false, Go_Left = false, Go_Right = false };
 
-        protected StudentData My_StudentData;
-        protected StudentData StudentData;
+        public static StudentData My_StudentData;
+        public static StudentData StudentData;
 
         protected const int MoveStep = 4;
 
@@ -46,7 +46,6 @@ namespace 로그인화면
         public BaseForm_test()
         {
             StudentManager.StudentDic.TryGetValue("127.0.0.1", out My_StudentData);
-
             SetUp();
 
             Map = 0;
@@ -114,9 +113,10 @@ namespace 로그인화면
             chatForm.Hide();
 
             // 아래 주석치면 키자마자 없어짐 왜지?
-
-            MyLabel.Text = My_StudentData.StudentName;
-            MyLabel.Name = Me.address;
+            if (My_StudentData != null)
+                MyLabel.Text = My_StudentData.StudentName;
+            if (Me != null)
+                MyLabel.Name = Me.address;
         }
 
         private void BaseForm_Label_Click(object sender, EventArgs e)
@@ -565,7 +565,7 @@ namespace 로그인화면
                     // OtherBubble.SizeMode = PictureBoxSizeMode.AutoSize;
                     //
                     StudentData.bubblechat.HasBeenUpdated = false;
-                    chatForm.LogAppend(StudentData.bubblechat.LogChat);
+                    chatForm.LogAppend(StudentData.bubblechat.LogChat, 2);
 
                 }
                 catch (Exception ex) { MessageBox.Show("오류  3번 " + ex.Message); return; }
@@ -593,7 +593,7 @@ namespace 로그인화면
                     ChatBubble.SizeMode = PictureBoxSizeMode.AutoSize;
                     //
                     StudentData.bubblechat.HasBeenUpdated = false;
-                    chatForm.LogAppend(StudentData.bubblechat.LogChat);
+                    chatForm.LogAppend(StudentData.bubblechat.LogChat, 1);
 
                 }
                 catch (Exception ex) { MessageBox.Show("오류  1번 " + ex.Message); return; }

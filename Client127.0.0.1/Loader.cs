@@ -96,7 +96,6 @@ namespace 로그인화면
                     }
                 case Ch_Color.Orange:
                     {
-
                         BaseForm_test.Me.location.X = 700;
                         BaseForm_test.Me.location.Y = 300;
                         BaseForm_test.SendLocation();
@@ -104,7 +103,6 @@ namespace 로그인화면
                     }
                 case Ch_Color.Green:
                     {
-
                         BaseForm_test.Me.location.X = 600;
                         BaseForm_test.Me.location.Y = 400;
                         BaseForm_test.SendLocation();
@@ -112,7 +110,6 @@ namespace 로그인화면
                     }
                 case Ch_Color.Blue:
                     {
-
                         BaseForm_test.Me.location.X = 700;
                         BaseForm_test.Me.location.Y = 400;
                         BaseForm_test.SendLocation();
