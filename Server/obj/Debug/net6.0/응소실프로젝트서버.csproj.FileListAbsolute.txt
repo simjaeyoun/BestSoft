@@ -1,0 +1,119 @@
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.exe
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.deps.json
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.runtimeconfig.json
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfo.cs
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\refint\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\ref\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\bin\Debug\net6.0\응소실프로젝트서버.exe
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\bin\Debug\net6.0\응소실프로젝트서버.deps.json
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\bin\Debug\net6.0\응소실프로젝트서버.runtimeconfig.json
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\bin\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\bin\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\응소실프로젝트서버.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\응소실프로젝트서버.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfo.cs
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\응소실프로젝트서버.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\refint\응소실프로젝트서버.dll
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
+C:\Users\user\OneDrive\바탕 화면\BestSoft\BestSoft\응소실프로젝트서버 async, await\obj\Debug\net6.0\ref\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\refint\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.exe
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.deps.json
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.runtimeconfig.json
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.AssemblyReference.cache
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfoInputs.cache
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfo.cs
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.CoreCompileInputs.cache
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
+C:\Users\ksksy\Desktop\응소실 테스트\1\BestSoft\응소실프로젝트서버\obj\Debug\net6.0\ref\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.exe
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.deps.json
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.runtimeconfig.json
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\bin\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.AssemblyReference.cache
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfoInputs.cache
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfo.cs
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.CoreCompileInputs.cache
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\refint\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
+C:\Users\ksksy\Desktop\응소실_0522_찐\응소실프로젝트서버\obj\Debug\net6.0\ref\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\0529_중간버전\Server\bin\Debug\net6.0\응소실프로젝트서버.exe
+C:\Users\ksksy\Desktop\0529_중간버전\Server\bin\Debug\net6.0\응소실프로젝트서버.deps.json
+C:\Users\ksksy\Desktop\0529_중간버전\Server\bin\Debug\net6.0\응소실프로젝트서버.runtimeconfig.json
+C:\Users\ksksy\Desktop\0529_중간버전\Server\bin\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\0529_중간버전\Server\bin\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\ksksy\Desktop\0529_중간버전\Server\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.AssemblyReference.cache
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfoInputs.cache
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfo.cs
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.CoreCompileInputs.cache
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\refint\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
+C:\Users\ksksy\Desktop\0529_중간버전\Server\obj\Debug\net6.0\ref\응소실프로젝트서버.dll
+C:\Users\82103\Desktop\alpha3\Server\bin\Debug\net6.0\응소실프로젝트서버.exe
+C:\Users\82103\Desktop\alpha3\Server\bin\Debug\net6.0\응소실프로젝트서버.deps.json
+C:\Users\82103\Desktop\alpha3\Server\bin\Debug\net6.0\응소실프로젝트서버.runtimeconfig.json
+C:\Users\82103\Desktop\alpha3\Server\bin\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\82103\Desktop\alpha3\Server\bin\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\82103\Desktop\alpha3\Server\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.AssemblyReference.cache
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\응소실프로젝트서버.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfoInputs.cache
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfo.cs
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.CoreCompileInputs.cache
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\refint\응소실프로젝트서버.dll
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
+C:\Users\82103\Desktop\alpha3\Server\obj\Debug\net6.0\ref\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\0604_ver_4\Server\bin\Debug\net6.0\응소실프로젝트서버.exe
+C:\Users\ksksy\Desktop\0604_ver_4\Server\bin\Debug\net6.0\응소실프로젝트서버.deps.json
+C:\Users\ksksy\Desktop\0604_ver_4\Server\bin\Debug\net6.0\응소실프로젝트서버.runtimeconfig.json
+C:\Users\ksksy\Desktop\0604_ver_4\Server\bin\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\0604_ver_4\Server\bin\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\ksksy\Desktop\0604_ver_4\Server\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.AssemblyReference.cache
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\응소실프로젝트서버.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfoInputs.cache
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\응소실프로젝트서버.AssemblyInfo.cs
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.CoreCompileInputs.cache
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\응소실프로젝트서버.csproj.CopyComplete
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\refint\응소실프로젝트서버.dll
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\응소실프로젝트서버.pdb
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\응소실프로젝트서버.genruntimeconfig.cache
+C:\Users\ksksy\Desktop\0604_ver_4\Server\obj\Debug\net6.0\ref\응소실프로젝트서버.dll
