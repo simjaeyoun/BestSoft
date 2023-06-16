@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "E1SFlFzfb3jHXa368zb+esRzbShPMdOpNuDtaknUrXWjbMNFj0nCtYBp5BGzBJgO84FQbhFwqHIz1ZE0JWYe6A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ksksy\\Desktop\\0605_UDP버전\\Server\\응소실프로젝트서버.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ksksy\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
